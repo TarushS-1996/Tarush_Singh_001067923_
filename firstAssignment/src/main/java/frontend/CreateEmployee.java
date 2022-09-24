@@ -7,6 +7,7 @@ package frontend;
 import com.aed.backend.FirstAssignment;
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -339,6 +340,7 @@ public class CreateEmployee extends javax.swing.JPanel {
         data.setEmail(MailTextField.getText());
         data.setPath(path);
         System.out.println(data);
+        JOptionPane.showMessageDialog(this, "New employee created.");
     }//GEN-LAST:event_AddMouseClicked
 
 
