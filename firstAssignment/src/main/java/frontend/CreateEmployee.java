@@ -98,11 +98,18 @@ public class CreateEmployee extends javax.swing.JPanel {
         GenderButtonGroup.add(Others);
         Others.setText("Others");
 
+        FirstNameTextField.setText("Not given");
+
+        LastNameTextField.setText("Not given");
+
+        EmployeeIDTextField.setText("Not given");
         EmployeeIDTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EmployeeIDTextFieldActionPerformed(evt);
             }
         });
+
+        AgeTextField.setText("0");
 
         StartDate.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         StartDate.setText("Start Date");
@@ -113,15 +120,25 @@ public class CreateEmployee extends javax.swing.JPanel {
         Team.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         Team.setText("Team Info");
 
+        LevelTextField.setText("0");
+
+        TeamTextField.setText("Not given");
+
         Position.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         Position.setText("Position");
+
+        PositionTextField.setText("Not decided");
 
         ContactInfo.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         ContactInfo.setText("Contact Information");
 
         PhoneNumber.setText("Phone Number");
 
+        PhoneNumberTextField.setText("0000000000");
+
         Mail.setText("Email ID");
+
+        MailTextField.setText("Not given");
 
         ProfilePicture.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         ProfilePicture.setText("Profile Picture");
@@ -145,6 +162,7 @@ public class CreateEmployee extends javax.swing.JPanel {
             }
         });
 
+        StartDateTextField.setText("1/1/1000");
         StartDateTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StartDateTextFieldActionPerformed(evt);
@@ -272,19 +290,16 @@ public class CreateEmployee extends javax.swing.JPanel {
                     .addComponent(Position, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PositionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(ContactInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(PhoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(Mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(MailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                        .addComponent(ContactInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PhoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ProfilePicture, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Choose))
