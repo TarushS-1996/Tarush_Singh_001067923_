@@ -256,6 +256,7 @@ public class ViewEmployee extends javax.swing.JPanel {
             MailID.setText("Email ID: ");
             PhoneNumber.setText("Ph. No.: ");
             JOptionPane.showMessageDialog(this, "Employee deleted.");
+            HRTool.list.remove(row);
         }
         else{
             JOptionPane.showMessageDialog(this, "No employee selected.");

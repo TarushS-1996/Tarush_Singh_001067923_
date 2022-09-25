@@ -362,6 +362,7 @@ public class CreateEmployee extends javax.swing.JPanel {
         data.setEmail(MailTextField.getText());
         data.setPath(path);
         HRTool.list.add(data);
+        System.out.println(HRTool.list);
         //dataPass.add(data);
         //String dataIn[] = {data.getName(), data.getEmployeeID(), data.getAge(), data.getGender(), data.getStartDate(), data.getLevel(), data.getTeam(), data.getPosition(), data.getEmail(), data.getPhoneNumber(), data.getPath()};
         //DefaultTableModel model = (DefaultTableModel)instant.jTable1.getModel();
