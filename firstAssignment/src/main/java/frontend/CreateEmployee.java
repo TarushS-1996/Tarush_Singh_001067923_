@@ -6,8 +6,10 @@ package frontend;
 
 import com.aed.backend.FirstAssignment;
 import java.io.File;
+import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -227,9 +229,8 @@ public class CreateEmployee extends javax.swing.JPanel {
                                         .addGap(9, 9, 9)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(StartDateTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(PositionTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                                                .addComponent(LevelTextField)))))
+                                            .addComponent(PositionTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                            .addComponent(LevelTextField))))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -360,14 +361,21 @@ public class CreateEmployee extends javax.swing.JPanel {
         data.setPhoneNumber(PhoneNumberTextField.getText());
         data.setEmail(MailTextField.getText());
         data.setPath(path);
-        System.out.println(data);
+        HRTool.list.add(data);
+        //dataPass.add(data);
+        //String dataIn[] = {data.getName(), data.getEmployeeID(), data.getAge(), data.getGender(), data.getStartDate(), data.getLevel(), data.getTeam(), data.getPosition(), data.getEmail(), data.getPhoneNumber(), data.getPath()};
+        //DefaultTableModel model = (DefaultTableModel)instant.jTable1.getModel();
+        //model.addRow(dataIn);
         JOptionPane.showMessageDialog(this, "New employee created.");
     }//GEN-LAST:event_AddMouseClicked
 
     private void StartDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartDateTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_StartDateTextFieldActionPerformed
-
+    
+    public void sendData(ArrayList data){
+         
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Add;

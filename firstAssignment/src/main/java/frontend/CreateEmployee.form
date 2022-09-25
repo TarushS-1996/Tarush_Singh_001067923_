@@ -108,10 +108,8 @@
                                           <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="StartDateTextField" pref="158" max="32767" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="PositionTextField" pref="158" max="32767" attributes="0"/>
-                                                  <Component id="LevelTextField" max="32767" attributes="0"/>
-                                              </Group>
+                                              <Component id="PositionTextField" pref="158" max="32767" attributes="0"/>
+                                              <Component id="LevelTextField" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
