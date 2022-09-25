@@ -6,7 +6,9 @@ package frontend;
 
 import com.aed.backend.FirstAssignment;
 import java.io.File;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -68,7 +70,7 @@ public class CreateEmployee extends javax.swing.JPanel {
         ProfilePicture = new javax.swing.JLabel();
         Choose = new javax.swing.JButton();
         Add = new javax.swing.JButton();
-        StartDateTextField = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -164,13 +166,6 @@ public class CreateEmployee extends javax.swing.JPanel {
             }
         });
 
-        StartDateTextField.setText("1/1/1000");
-        StartDateTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StartDateTextFieldActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -228,7 +223,6 @@ public class CreateEmployee extends javax.swing.JPanel {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(9, 9, 9)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(StartDateTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
                                             .addComponent(PositionTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
                                             .addComponent(LevelTextField))))
                                 .addGap(18, 18, 18)
@@ -238,6 +232,7 @@ public class CreateEmployee extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(MailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(4, 4, 4)
                                         .addComponent(Team, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(TeamTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -245,7 +240,10 @@ public class CreateEmployee extends javax.swing.JPanel {
                                 .addGap(12, 12, 12)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Add)
-                                    .addComponent(Choose))))))
+                                    .addComponent(Choose)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(158, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -277,9 +275,9 @@ public class CreateEmployee extends javax.swing.JPanel {
                     .addComponent(Female)
                     .addComponent(Others))
                 .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(StartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(StartDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(StartDate, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Level, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -350,11 +348,13 @@ public class CreateEmployee extends javax.swing.JPanel {
 
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
         String name = FirstNameTextField.getText() + " " +LastNameTextField.getText();
+        Date date = jDateChooser1.getDate();
+        String startDate = DateFormat.getDateInstance().format(date);
         data.setName(name);
         data.setEmployeeID(EmployeeIDTextField.getText());
         data.setAge(AgeTextField.getText());
         data.setGender(gender);
-        data.setStartDate(StartDateTextField.getText());
+        data.setStartDate(startDate);
         data.setLevel(LevelTextField.getText());
         data.setTeam(TeamTextField.getText());
         data.setPosition(PositionTextField.getText());
@@ -369,10 +369,6 @@ public class CreateEmployee extends javax.swing.JPanel {
         //model.addRow(dataIn);
         JOptionPane.showMessageDialog(this, "New employee created.");
     }//GEN-LAST:event_AddMouseClicked
-
-    private void StartDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartDateTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_StartDateTextFieldActionPerformed
     
     public void sendData(ArrayList data){
          
@@ -406,10 +402,10 @@ public class CreateEmployee extends javax.swing.JPanel {
     private javax.swing.JTextField PositionTextField;
     private javax.swing.JLabel ProfilePicture;
     private javax.swing.JLabel StartDate;
-    private javax.swing.JTextField StartDateTextField;
     private javax.swing.JLabel Team;
     private javax.swing.JTextField TeamTextField;
     private javax.swing.JLabel Title;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

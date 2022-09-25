@@ -55,7 +55,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                          <Component id="jLabel1" min="-2" pref="246" max="-2" attributes="0"/>
+                                          <Component id="PhotoID" min="-2" pref="246" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="NameLabel" alignment="0" min="-2" pref="366" max="-2" attributes="0"/>
@@ -125,7 +125,7 @@
                               <Component id="MailID" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jLabel1" max="32767" attributes="0"/>
+                      <Component id="PhotoID" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                   <Component id="Update" min="-2" max="-2" attributes="0"/>
@@ -314,10 +314,13 @@
             <Property name="text" type="java.lang.String" value="Update"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="PhotoID">
           <Properties>
             <Property name="text" type="java.lang.String" value="Photo ID"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
