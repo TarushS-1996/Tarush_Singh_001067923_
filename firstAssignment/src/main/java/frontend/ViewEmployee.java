@@ -10,7 +10,10 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -72,7 +75,7 @@ public class ViewEmployee extends javax.swing.JPanel {
         Update = new javax.swing.JButton();
         PhotoID = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         ViewPanel.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -133,7 +136,12 @@ public class ViewEmployee extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setText("Search:");
+        jButton1.setText("Search");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ViewPanelLayout = new javax.swing.GroupLayout(ViewPanel);
         ViewPanel.setLayout(ViewPanelLayout);
@@ -151,14 +159,13 @@ public class ViewEmployee extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ViewPanelLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(ViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1)
                             .addGroup(ViewPanelLayout.createSequentialGroup()
                                 .addGroup(ViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(ViewPanelLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(ViewPanelLayout.createSequentialGroup()
                                         .addGap(21, 21, 21)
                                         .addComponent(PhotoID, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -219,12 +226,12 @@ public class ViewEmployee extends javax.swing.JPanel {
                 .addComponent(Update)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(30, 30, 30)
                 .addGroup(ViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(Delete)
                 .addGap(19, 19, 19))
@@ -256,7 +263,7 @@ public class ViewEmployee extends javax.swing.JPanel {
         String email = jTable1.getModel().getValueAt(row, 8).toString();
         String phone = jTable1.getModel().getValueAt(row, 9).toString();
         String path;
-        if (jTable1.getModel().getValueAt(row, 10).toString().isBlank()){
+        if (jTable1.getModel().getValueAt(row, 10).toString().isEmpty()){
             path = defaultImage;
         }else{
             path = jTable1.getModel().getValueAt(row, 10).toString();
@@ -290,6 +297,8 @@ public class ViewEmployee extends javax.swing.JPanel {
             Position.setText("Position: ");
             MailID.setText("Email ID: ");
             PhoneNumber.setText("Ph. No.: ");
+            ImageIcon icon = new ImageIcon(defaultImage);
+            PhotoID.setIcon(icon);
             JOptionPane.showMessageDialog(this, "Employee deleted.");
             HRTool.list.remove(row);
         }
@@ -299,9 +308,23 @@ public class ViewEmployee extends javax.swing.JPanel {
     }//GEN-LAST:event_DeleteMouseClicked
 
     private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
-        String text = jTextField1.getText();
         
     }//GEN-LAST:event_jTextField1MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        /*
+        Credit for the below code snippet: https://stackoverflow.com/a/37989058
+        */
+        String text = jTextField1.getText();
+        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(((DefaultTableModel) jTable1.getModel()));
+        jTable1.setRowSorter(sorter);
+        if (text.trim().length() != 0){
+            sorter.setRowFilter(RowFilter.regexFilter(text));            
+        }
+        else{
+            sorter.setRowFilter(null);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
             
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -320,7 +343,7 @@ public class ViewEmployee extends javax.swing.JPanel {
     private javax.swing.JLabel Title;
     private javax.swing.JButton Update;
     private javax.swing.JPanel ViewPanel;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JTable jTable1;
