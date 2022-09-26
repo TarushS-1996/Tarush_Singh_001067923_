@@ -7,6 +7,7 @@ package frontend;
 import com.aed.backend.FirstAssignment;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -24,9 +25,16 @@ public class ViewEmployee extends javax.swing.JPanel {
      * Creates new form ViewEmployee
      * @param data
      */
+    
+    String defaultImage = "/home/tarush/Desktop/Work/Java/firstAssignment/Tarush_Singh_001067923-main/firstAssignment/src/main/java/Images/default.png";
+    
     public ViewEmployee() {
         //this.data = data;
+        ImageIcon icon = new ImageIcon(defaultImage);
         initComponents();
+        //DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        PhotoID.setIcon(icon);
+        
         for (FirstAssignment data : HRTool.list){
             String dataIn[] = {data.getName(), data.getEmployeeID(), data.getAge(), data.getGender(), data.getStartDate(), data.getLevel(), data.getTeam(), data.getPosition(), data.getEmail(), data.getPhoneNumber(), data.getPath()};
             DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
@@ -63,6 +71,8 @@ public class ViewEmployee extends javax.swing.JPanel {
         Delete = new javax.swing.JButton();
         Update = new javax.swing.JButton();
         PhotoID = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         ViewPanel.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -117,6 +127,14 @@ public class ViewEmployee extends javax.swing.JPanel {
 
         PhotoID.setText("Photo ID");
 
+        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField1MouseClicked(evt);
+            }
+        });
+
+        jLabel1.setText("Search:");
+
         javax.swing.GroupLayout ViewPanelLayout = new javax.swing.GroupLayout(ViewPanel);
         ViewPanel.setLayout(ViewPanelLayout);
         ViewPanelLayout.setHorizontalGroup(
@@ -130,12 +148,17 @@ public class ViewEmployee extends javax.swing.JPanel {
                     .addGroup(ViewPanelLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Delete))
-                    .addGroup(ViewPanelLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ViewPanelLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(ViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(ViewPanelLayout.createSequentialGroup()
                                 .addGroup(ViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(ViewPanelLayout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(ViewPanelLayout.createSequentialGroup()
                                         .addGap(21, 21, 21)
                                         .addComponent(PhotoID, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -196,7 +219,11 @@ public class ViewEmployee extends javax.swing.JPanel {
                 .addComponent(Update)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
+                .addGap(28, 28, 28)
+                .addGroup(ViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(Delete)
@@ -217,7 +244,7 @@ public class ViewEmployee extends javax.swing.JPanel {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         int row = jTable1.getSelectedRow();
-        System.out.println(row);
+        //System.out.println(row);
         String name = jTable1.getModel().getValueAt(row, 0).toString();
         String id = jTable1.getModel().getValueAt(row, 1).toString();
         String age = jTable1.getModel().getValueAt(row, 2).toString();
@@ -228,6 +255,14 @@ public class ViewEmployee extends javax.swing.JPanel {
         String position = jTable1.getModel().getValueAt(row, 7).toString();
         String email = jTable1.getModel().getValueAt(row, 8).toString();
         String phone = jTable1.getModel().getValueAt(row, 9).toString();
+        String path;
+        if (jTable1.getModel().getValueAt(row, 10).toString().isBlank()){
+            path = defaultImage;
+        }else{
+            path = jTable1.getModel().getValueAt(row, 10).toString();
+        }
+        ImageIcon icon1 = new ImageIcon(path);
+        PhotoID.setIcon(icon1);
         NameLabel.setText("Name: "+name);
         EmployeeIDLabel.setText("Employee ID: "+id);
         AgeLabel.setText("Age: "+age);
@@ -263,7 +298,11 @@ public class ViewEmployee extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_DeleteMouseClicked
 
+    private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
+        String text = jTextField1.getText();
         
+    }//GEN-LAST:event_jTextField1MouseClicked
+            
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AgeLabel;
@@ -281,8 +320,10 @@ public class ViewEmployee extends javax.swing.JPanel {
     private javax.swing.JLabel Title;
     private javax.swing.JButton Update;
     private javax.swing.JPanel ViewPanel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
