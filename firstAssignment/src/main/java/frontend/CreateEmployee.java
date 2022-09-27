@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author tarush
  */
 public class CreateEmployee extends javax.swing.JPanel {
-    
+    String defaultImage = "/home/tarush/Desktop/Work/Java/firstAssignment/Tarush_Singh_001067923-main/firstAssignment/src/main/java/Images/default.png";
     String gender;
     String path;
     /**
@@ -351,6 +351,9 @@ public class CreateEmployee extends javax.swing.JPanel {
         chooser.showOpenDialog(null);
         File file = chooser.getSelectedFile();
         path = file.getAbsolutePath();
+        if (path.isEmpty()){
+            path = defaultImage;
+        }
         //data.setPath(path);
         System.out.println(path);
     }//GEN-LAST:event_ChooseMouseClicked
@@ -365,12 +368,16 @@ public class CreateEmployee extends javax.swing.JPanel {
         data.setAge(AgeTextField.getText());
         data.setGender(gender);
         data.setStartDate(startDate);
-        //data.setStartDate("Null for now");
         data.setLevel(LevelTextField.getText());
         data.setTeam(TeamTextField.getText());
         data.setPosition(PositionTextField.getText());
         data.setPhoneNumber(PhoneNumberTextField.getText());
         data.setEmail(MailTextField.getText());
+        /*if (path.toString().length() == 0){
+            data.setPath(defaultImage);
+        }else{
+            data.setPath(path);
+        }*/
         data.setPath(path);
         HRTool.list.add(data);
         JOptionPane.showMessageDialog(this, "New employee created.");

@@ -127,6 +127,11 @@ public class ViewEmployee extends javax.swing.JPanel {
         });
 
         Update.setText("Update");
+        Update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UpdateMouseClicked(evt);
+            }
+        });
 
         PhotoID.setText("Photo ID");
 
@@ -165,7 +170,9 @@ public class ViewEmployee extends javax.swing.JPanel {
                                     .addGroup(ViewPanelLayout.createSequentialGroup()
                                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(Update))
                                     .addGroup(ViewPanelLayout.createSequentialGroup()
                                         .addGap(21, 21, 21)
                                         .addComponent(PhotoID, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,7 +181,6 @@ public class ViewEmployee extends javax.swing.JPanel {
                                             .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(StartDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(Position, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Update)
                                             .addGroup(ViewPanelLayout.createSequentialGroup()
                                                 .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
@@ -222,14 +228,13 @@ public class ViewEmployee extends javax.swing.JPanel {
                             .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(MailID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(PhotoID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(7, 7, 7)
-                .addComponent(Update)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(37, 37, 37)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(ViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(Update))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
@@ -325,6 +330,43 @@ public class ViewEmployee extends javax.swing.JPanel {
             sorter.setRowFilter(null);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateMouseClicked
+        int row = jTable1.getSelectedRow();
+        if (row != -1){
+            /*
+            Create an instance of the employee class. 
+            Using JTable get the latest data.
+            Use the employee instance's setters to make a new array. 
+            Replace the array at the index which is same as the row value.
+            */
+            FirstAssignment data = new FirstAssignment();
+            data = HRTool.list.get(row);
+            String name = jTable1.getModel().getValueAt(row, 0).toString();
+            String id = jTable1.getModel().getValueAt(row, 1).toString();
+            String age = jTable1.getModel().getValueAt(row, 2).toString();
+            String gender = jTable1.getModel().getValueAt(row, 3).toString();
+            String date = jTable1.getModel().getValueAt(row, 4).toString();
+            String level = jTable1.getModel().getValueAt(row, 5).toString();
+            String team = jTable1.getModel().getValueAt(row, 6).toString();
+            String position = jTable1.getModel().getValueAt(row, 7).toString();
+            String email = jTable1.getModel().getValueAt(row, 8).toString();
+            String phone = jTable1.getModel().getValueAt(row, 9).toString();
+            data.setName(name);
+            data.setEmployeeID(id);
+            data.setAge(age);
+            data.setGender(gender);
+            data.setStartDate(date);
+            data.setLevel(level);
+            data.setTeam(team);
+            data.setPosition(position);
+            data.setEmail(email);
+            data.setPhoneNumber(phone);
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "No row selected for updates.");
+        }
+    }//GEN-LAST:event_UpdateMouseClicked
             
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
