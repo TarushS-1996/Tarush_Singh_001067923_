@@ -268,12 +268,7 @@ public class ViewEmployee extends javax.swing.JPanel {
         String position = jTable1.getModel().getValueAt(row, 7).toString();
         String email = jTable1.getModel().getValueAt(row, 8).toString();
         String phone = jTable1.getModel().getValueAt(row, 9).toString();
-        String path;
-        if (jTable1.getModel().getValueAt(row, 10).toString().isEmpty()){
-            path = defaultImage;
-        }else{
-            path = jTable1.getModel().getValueAt(row, 10).toString();
-        }
+        String path = jTable1.getModel().getValueAt(row, 10).toString();;
         ImageIcon icon1 = new ImageIcon(path);
         Image icon = icon1.getImage().getScaledInstance(PhotoID.getWidth(), PhotoID.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon iconScaled = new ImageIcon(icon);

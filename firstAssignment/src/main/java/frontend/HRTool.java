@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class HRTool extends javax.swing.JFrame {
     FirstAssignment data;
     public static ArrayList<FirstAssignment> list = new ArrayList<>();
+    //public static ArrayList<String> errors = new ArrayList<>();
     /**
      * Creates new form HRTool
      */
