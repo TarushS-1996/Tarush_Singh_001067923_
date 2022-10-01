@@ -20,6 +20,7 @@ public class CreateEmployee extends javax.swing.JPanel {
     String defaultImage = "/home/tarush/Desktop/Work/Java/firstAssignment/Tarush_Singh_001067923-main/firstAssignment/src/main/java/Images/default.png";
     String gender;
     String path;
+    ArrayList<String> errors = new ArrayList<>();
     /**
      * Creates new form CreateEmployee
      * @param data
@@ -359,20 +360,22 @@ public class CreateEmployee extends javax.swing.JPanel {
     }//GEN-LAST:event_ChooseMouseClicked
 
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
+        //All If else need are for error detection. Designed to explain to user for the errors in form. 
+        // Also add the error correction process. Change the string to int as data type in FirstAssignment.
         String name = FirstNameTextField.getText() + " " +LastNameTextField.getText();
         FirstAssignment data = new FirstAssignment();
         Date date = jDateChooser1.getDate();
         String startDate = DateFormat.getDateInstance().format(date);
         data.setName(name);
-        data.setEmployeeID(EmployeeIDTextField.getText());
-        data.setAge(AgeTextField.getText());
-        data.setGender(gender);
+        data.setEmployeeID(EmployeeIDTextField.getText()); 
+        data.setAge(AgeTextField.getText());//need if else here
+        data.setGender(gender);//need if else here
         data.setStartDate(startDate);
         data.setLevel(LevelTextField.getText());
         data.setTeam(TeamTextField.getText());
         data.setPosition(PositionTextField.getText());
-        data.setPhoneNumber(PhoneNumberTextField.getText());
-        data.setEmail(MailTextField.getText());
+        data.setPhoneNumber(PhoneNumberTextField.getText());//need if else here
+        data.setEmail(MailTextField.getText());//need if else here
         /*if (path.toString().length() == 0){
             data.setPath(defaultImage);
         }else{

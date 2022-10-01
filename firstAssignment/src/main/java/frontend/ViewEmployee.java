@@ -5,6 +5,7 @@
 package frontend;
 
 import com.aed.backend.FirstAssignment;
+import java.awt.Image;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -274,7 +275,9 @@ public class ViewEmployee extends javax.swing.JPanel {
             path = jTable1.getModel().getValueAt(row, 10).toString();
         }
         ImageIcon icon1 = new ImageIcon(path);
-        PhotoID.setIcon(icon1);
+        Image icon = icon1.getImage().getScaledInstance(PhotoID.getWidth(), PhotoID.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon iconScaled = new ImageIcon(icon);
+        PhotoID.setIcon(iconScaled);
         NameLabel.setText("Name: "+name);
         EmployeeIDLabel.setText("Employee ID: "+id);
         AgeLabel.setText("Age: "+age);
