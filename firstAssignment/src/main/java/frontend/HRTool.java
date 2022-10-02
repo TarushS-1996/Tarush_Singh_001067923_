@@ -79,7 +79,7 @@ public class HRTool extends javax.swing.JFrame {
 
         jSplitPane1.setLeftComponent(Button);
 
-        View.setBackground(new java.awt.Color(153, 153, 255));
+        View.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout ViewLayout = new javax.swing.GroupLayout(View);
         View.setLayout(ViewLayout);

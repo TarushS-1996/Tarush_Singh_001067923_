@@ -29,7 +29,7 @@
     <Container class="javax.swing.JPanel" name="ViewPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="99" red="99" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
       </Properties>
 
@@ -64,50 +64,56 @@
                                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                           <Component id="PhotoID" min="-2" pref="246" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="NameLabel" alignment="0" min="-2" pref="366" max="-2" attributes="0"/>
-                                              <Component id="StartDateLabel" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
-                                              <Component id="Position" alignment="0" min="-2" pref="283" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="PhoneNumber" min="-2" pref="159" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="MailID" min="-2" pref="282" max="-2" attributes="0"/>
+                                                  <Component id="StartDateLabel" min="-2" pref="216" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="LevelLabel" min="-2" pref="86" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="EmployeeIDLabel" min="-2" pref="192" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                                  <Component id="EmployeeIDLabel" min="-2" pref="214" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="AgeLabel" min="-2" pref="112" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="GenderLabel" min="-2" pref="112" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="LevelLabel" min="-2" pref="86" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                                                   <Component id="TeamLabel" min="-2" pref="210" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="Position" min="-2" pref="283" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="PhoneNumber" min="-2" pref="159" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                                                  <Component id="MailID" min="-2" pref="282" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="354" max="-2" attributes="0"/>
-                                          <Component id="Title" min="-2" pref="112" max="-2" attributes="0"/>
-                                      </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="94" max="32767" attributes="0"/>
+                                  <EmptySpace pref="51" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               </Group>
+              <Component id="jSeparator2" alignment="1" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                  <Component id="Title" min="-2" pref="149" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Title" min="-2" pref="47" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="Title" min="-2" pref="54" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Component id="jSeparator2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="NameLabel" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -117,21 +123,22 @@
                               <Component id="GenderLabel" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="StartDateLabel" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="StartDateLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="LevelLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="LevelLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="TeamLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="Position" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          <Component id="Position" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="PhoneNumber" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="MailID" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="PhoneNumber" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="MailID" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="PhotoID" max="32767" attributes="0"/>
+                      <Component id="PhotoID" min="-2" pref="264" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
@@ -142,7 +149,7 @@
                       <Component id="Update" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="289" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="295" max="32767" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="Delete" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
@@ -154,58 +161,88 @@
         <Component class="javax.swing.JLabel" name="Title">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Liberation Sans" size="15" style="0"/>
+              <Font name="Liberation Sans" size="17" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="View Employee"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="NameLabel">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="15" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Name:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="EmployeeIDLabel">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="15" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Employee ID:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="AgeLabel">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="15" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Age:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="GenderLabel">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="15" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Gender:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="StartDateLabel">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="15" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Start Date:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="LevelLabel">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="15" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Level:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="TeamLabel">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="15" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Team Info:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Position">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="15" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Position:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="PhoneNumber">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="15" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Ph. No:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="MailID">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="15" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Email ID:"/>
           </Properties>
         </Component>
@@ -347,6 +384,8 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="jSeparator2">
         </Component>
       </SubComponents>
     </Container>
