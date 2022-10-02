@@ -174,6 +174,7 @@ public class CreateEmployee extends javax.swing.JPanel {
             }
         });
 
+        Add.setBackground(new java.awt.Color(204, 204, 204));
         Add.setText("Add Employee");
         Add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -376,7 +377,7 @@ public class CreateEmployee extends javax.swing.JPanel {
         data.setPosition(PositionTextField.getText());
         data.setPhoneNumber(PhoneNumberTextField.getText());//need if else here
         data.setEmail(MailTextField.getText());//need if else here
-        if (path == null && path.trim().isEmpty()){
+        if (path == null){
             data.setPath(defaultImage);
         }else{
             data.setPath(path);

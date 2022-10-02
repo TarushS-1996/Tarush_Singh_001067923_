@@ -36,7 +36,6 @@ public class ViewEmployee extends javax.swing.JPanel {
         //this.data = data;
         ImageIcon icon = new ImageIcon(defaultImage);
         initComponents();
-        //DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         PhotoID.setIcon(icon);
         
         for (FirstAssignment data : HRTool.list){
