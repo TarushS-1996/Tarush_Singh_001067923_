@@ -255,8 +255,8 @@ public class ViewEmployee extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        int row = jTable1.getSelectedRow();
+    private void populateData(int a){
+        int row = a;
         //System.out.println(row);
         String name = jTable1.getModel().getValueAt(row, 0).toString();
         String id = jTable1.getModel().getValueAt(row, 1).toString();
@@ -283,6 +283,12 @@ public class ViewEmployee extends javax.swing.JPanel {
         Position.setText("Position: "+position);
         MailID.setText("Email ID: "+email);
         PhoneNumber.setText("Ph. No.: "+phone);
+    }
+    
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        int row = jTable1.getSelectedRow();
+        //System.out.println(row);
+        populateData(row);
     }//GEN-LAST:event_jTable1MouseClicked
         
     private void DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteMouseClicked
@@ -327,6 +333,11 @@ public class ViewEmployee extends javax.swing.JPanel {
         else{
             sorter.setRowFilter(null);
         }
+        int row = jTable1.getSelectedRow();
+        if (row != -1){
+            populateData(row);
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateMouseClicked

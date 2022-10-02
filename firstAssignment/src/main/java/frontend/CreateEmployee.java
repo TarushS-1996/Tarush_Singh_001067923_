@@ -374,10 +374,10 @@ public class CreateEmployee extends javax.swing.JPanel {
         data.setPosition(PositionTextField.getText());
         data.setPhoneNumber(PhoneNumberTextField.getText());//need if else here
         data.setEmail(MailTextField.getText());//need if else here
-        if (path != null && path.trim().isEmpty()){
-            data.setPath(path);
-        }else{
+        if (path == null && path.trim().isEmpty()){
             data.setPath(defaultImage);
+        }else{
+            data.setPath(path);
         }
         //data.setPath(path);
         if(data.getErrors().size() == 0){

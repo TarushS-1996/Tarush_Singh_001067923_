@@ -131,7 +131,7 @@ public class FirstAssignment {
     }
 
     public void setEmail(String Email) {
-        if (Email.contains("@")){
+        if (Email.contains("@")||Email.endsWith(".com")){
             this.Email = Email;
         }else{
             this.errors.add("Email seems to be incomplete or incorrect. Please verify.");
