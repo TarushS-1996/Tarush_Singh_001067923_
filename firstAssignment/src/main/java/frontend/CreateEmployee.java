@@ -353,8 +353,9 @@ public class CreateEmployee extends javax.swing.JPanel {
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
         File file = chooser.getSelectedFile();
-        path = file.getAbsolutePath();
-        //System.out.println(path);
+        if (file != null){
+            path = file.getAbsolutePath();
+        }
     }//GEN-LAST:event_ChooseMouseClicked
 
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked

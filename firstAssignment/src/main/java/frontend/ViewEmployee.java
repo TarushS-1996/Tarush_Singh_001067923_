@@ -288,7 +288,9 @@ public class ViewEmployee extends javax.swing.JPanel {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         int row = jTable1.getSelectedRow();
         //System.out.println(row);
-        populateData(row);
+        if (row != -1){
+            populateData(row);
+        }
     }//GEN-LAST:event_jTable1MouseClicked
         
     private void DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteMouseClicked
@@ -371,6 +373,16 @@ public class ViewEmployee extends javax.swing.JPanel {
             data.setPosition(position);
             data.setEmail(email);
             data.setPhoneNumber(phone);
+            /*if (data.getErrors().size()>0){
+                for (String d:data.getErrors()){
+                    JOptionPane.showMessageDialog(this, d);
+                }
+            
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Data updated with proper  successfully.");
+            }*/
+            
         }
         else{
             JOptionPane.showMessageDialog(this, "No row selected for updates.");
