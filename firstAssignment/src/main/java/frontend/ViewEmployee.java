@@ -138,6 +138,7 @@ public class ViewEmployee extends javax.swing.JPanel {
             }
         });
 
+        Update.setBackground(new java.awt.Color(204, 204, 204));
         Update.setText("Update");
         Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -153,6 +154,7 @@ public class ViewEmployee extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setText("Search");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
