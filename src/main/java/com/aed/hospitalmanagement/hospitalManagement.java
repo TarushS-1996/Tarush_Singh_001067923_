@@ -1084,7 +1084,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         enc.setEncounterID(encIDGen());
         DefaultTableModel patientTable = (DefaultTableModel) PatienAppointmentHistory.getModel();
         String dataIn[] = {enc.getEncounterWith(), enc.getEncounterDate(), enc.getAilment()};
-        patientTable.addRow(dataIn);
+        //patientTable.addRow(dataIn);
         
     }//GEN-LAST:event_PatientAppointmentSubmitActionPerformed
 
