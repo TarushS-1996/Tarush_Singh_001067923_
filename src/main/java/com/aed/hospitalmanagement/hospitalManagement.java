@@ -1088,7 +1088,7 @@ public class hospitalManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_viewAppoitnmentPatientActionPerformed
 
     private void ViewEncounterHistoryDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewEncounterHistoryDoctorActionPerformed
-        SplitPanelPaint(PatientEncounterHistory);
+        SplitPanelPaint(PatientEncounterHistory);//to add some data
     }//GEN-LAST:event_ViewEncounterHistoryDoctorActionPerformed
 
     private void AddVitalSignsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddVitalSignsActionPerformed
