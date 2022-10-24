@@ -10,6 +10,7 @@ import com.aed.backend.DoctorPerson;
 import com.aed.backend.Encounter;
 import com.aed.backend.EncounterHistory;
 import com.aed.backend.Person;
+import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -941,6 +942,13 @@ public class hospitalManagement extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_rolesComboBoxActionPerformed
 
+    public String encIDGen(){
+        Random ran = new Random();
+        int idInt = ran.nextInt(100);
+        String encID = "ENC-"+idInt;
+        return encID;
+    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         PanelPaint(Register);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -1073,9 +1081,11 @@ public class hospitalManagement extends javax.swing.JFrame {
         enc.setAilment(jTextArea2.getText());
         enc.setEncounterDate(PatientAppointmentDateChooser.getDate().toString());
         enc.setEncounterWith(PatientAppointmentDrList.getSelectedItem().toString());
+        enc.setEncounterID(encIDGen());
         DefaultTableModel patientTable = (DefaultTableModel) PatienAppointmentHistory.getModel();
         String dataIn[] = {enc.getEncounterWith(), enc.getEncounterDate(), enc.getAilment()};
         patientTable.addRow(dataIn);
+        
     }//GEN-LAST:event_PatientAppointmentSubmitActionPerformed
 
     private void BackToPatientHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPatientHomeActionPerformed
@@ -1084,7 +1094,14 @@ public class hospitalManagement extends javax.swing.JFrame {
 
     private void viewAppoitnmentPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAppoitnmentPatientActionPerformed
         SplitPanelPaint(ViewPatientAppointment);
-        //patientAppointmentsList(ValidationDoctor().getUsername());
+        DefaultTableModel patientTable = (DefaultTableModel) PatienAppointmentHistory.getModel();
+        patientTable.setRowCount(0);
+        for (Encounter enc : encHistory.getEncounterHistory()){
+            if (enc.getUsername().equals(ValidationPerson().getUsername())){
+                String dataIn[] = {enc.getEncounterWith(), enc.getEncounterDate(), enc.getAilment()};
+                patientTable.addRow(dataIn);
+            }
+        }
     }//GEN-LAST:event_viewAppoitnmentPatientActionPerformed
 
     private void ViewEncounterHistoryDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewEncounterHistoryDoctorActionPerformed
