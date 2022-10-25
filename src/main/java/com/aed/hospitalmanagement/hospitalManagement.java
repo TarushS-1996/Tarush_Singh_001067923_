@@ -24,6 +24,7 @@ public class hospitalManagement extends javax.swing.JFrame {
     PatientDirectory dir = new PatientDirectory();
     DoctorDirectory docDir = new DoctorDirectory();
     EncounterHistory encHistory = new EncounterHistory();
+    
 
     /**
      * Creates new form hospitalManagement
@@ -31,6 +32,11 @@ public class hospitalManagement extends javax.swing.JFrame {
     public hospitalManagement() {
         initComponents();
         medicalLicenseNumberTextField.setEnabled(false);
+        userName.setEnabled(false);
+        encounterID.setEnabled(false);
+        patientAgeFieldVitalSignsRecording.setEnabled(false);
+        bloodGroupFieldVitalSignsRecording.setEnabled(false);
+        jTextArea4.setEnabled(false);
     }
     
     public void PanelPaint(JPanel page){
@@ -140,9 +146,28 @@ public class hospitalManagement extends javax.swing.JFrame {
         AddVitalSignsToEncounter = new javax.swing.JButton();
         ClearVitalSigns = new javax.swing.JButton();
         userName = new javax.swing.JTextField();
-        PatientID = new javax.swing.JTextField();
+        encounterID = new javax.swing.JTextField();
         usernameVitalSignsRecording = new javax.swing.JLabel();
-        usernameVitalSignsRecording1 = new javax.swing.JLabel();
+        encounterIDVitalSignsRecording = new javax.swing.JLabel();
+        patientAgeFieldVitalSignsRecording = new javax.swing.JTextField();
+        patientAgeVitalSignsRecording = new javax.swing.JLabel();
+        bloodGroupIDVitalSignsRecording = new javax.swing.JLabel();
+        bloodGroupFieldVitalSignsRecording = new javax.swing.JTextField();
+        heightVitalSignsRecording1 = new javax.swing.JLabel();
+        bloodPressureIDVitalSignsRecording = new javax.swing.JLabel();
+        temperatureVitalSignsRecording3 = new javax.swing.JLabel();
+        respirationRateIDVitalSignsRecording4 = new javax.swing.JLabel();
+        patientAgeFieldVitalSignsRecording1 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        patientAgeFieldVitalSignsRecording2 = new javax.swing.JTextField();
+        patientAgeFieldVitalSignsRecording3 = new javax.swing.JTextField();
+        patientAgeFieldVitalSignsRecording4 = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        diagnosisVitalSignsRecording1 = new javax.swing.JLabel();
+        ailmentVitalSignsRecording2 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
         Grievences = new javax.swing.JPanel();
         MailIDGrievencesLabel = new javax.swing.JLabel();
         mailIDGrievences = new javax.swing.JTextField();
@@ -423,16 +448,16 @@ public class hospitalManagement extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
+                .addContainerGap(34, Short.MAX_VALUE)
                 .addComponent(jButton5)
-                .addGap(57, 57, 57))
+                .addGap(29, 29, 29))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(520, Short.MAX_VALUE)
+                .addContainerGap(518, Short.MAX_VALUE)
                 .addComponent(jButton5)
-                .addGap(37, 37, 37))
+                .addGap(39, 39, 39))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -468,7 +493,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                     .addGroup(PatientHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(viewAppoitnmentPatient, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(createAppointment, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(365, Short.MAX_VALUE))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
         PatientHomeLayout.setVerticalGroup(
             PatientHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -521,7 +546,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         CreatePatientAppointment.setLayout(CreatePatientAppointmentLayout);
         CreatePatientAppointmentLayout.setHorizontalGroup(
             CreatePatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
             .addGroup(CreatePatientAppointmentLayout.createSequentialGroup()
                 .addGroup(CreatePatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CreatePatientAppointmentLayout.createSequentialGroup()
@@ -627,7 +652,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         ViewPatientAppointment.setLayout(ViewPatientAppointmentLayout);
         ViewPatientAppointmentLayout.setHorizontalGroup(
             ViewPatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)
+            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
             .addGroup(ViewPatientAppointmentLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ViewPatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -690,7 +715,7 @@ public class hospitalManagement extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Patient Name", "Appointment date", "Ailment"
+                "Appointment ID", "Patient Name", "Appointment date", "Ailment"
             }
         ));
         jScrollPane3.setViewportView(DoctorAppointment);
@@ -710,7 +735,7 @@ public class hospitalManagement extends javax.swing.JFrame {
             DoctorHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DoctorHomeLayout.createSequentialGroup()
                 .addGroup(DoctorHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 752, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
                     .addGroup(DoctorHomeLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(DoctorHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -776,7 +801,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addGroup(PatientEncounterHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PatientEncounterHistoryLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 728, Short.MAX_VALUE))
                     .addGroup(PatientEncounterHistoryLayout.createSequentialGroup()
                         .addGroup(PatientEncounterHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PatientEncounterHistoryLayout.createSequentialGroup()
@@ -818,37 +843,116 @@ public class hospitalManagement extends javax.swing.JFrame {
         });
 
         AddVitalSignsToEncounter.setText("Add Vital Signs");
+        AddVitalSignsToEncounter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddVitalSignsToEncounterActionPerformed(evt);
+            }
+        });
 
         ClearVitalSigns.setText("Clear");
 
         usernameVitalSignsRecording.setText("Username:");
 
-        usernameVitalSignsRecording1.setText("Username:");
+        encounterIDVitalSignsRecording.setText("Encounter ID:");
+
+        patientAgeVitalSignsRecording.setText("Age:");
+
+        bloodGroupIDVitalSignsRecording.setText("Blood group:");
+
+        heightVitalSignsRecording1.setText("Height:");
+
+        bloodPressureIDVitalSignsRecording.setText("Blood pressure:");
+
+        temperatureVitalSignsRecording3.setText("Temperature:");
+
+        respirationRateIDVitalSignsRecording4.setText("Respiration rate:");
+
+        jLabel9.setText("cm");
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane5.setViewportView(jTextArea3);
+
+        diagnosisVitalSignsRecording1.setText("Diagnosis:");
+
+        ailmentVitalSignsRecording2.setText("Ailment:");
+
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        jScrollPane6.setViewportView(jTextArea4);
 
         javax.swing.GroupLayout VitalSignsPageLayout = new javax.swing.GroupLayout(VitalSignsPage);
         VitalSignsPage.setLayout(VitalSignsPageLayout);
         VitalSignsPageLayout.setHorizontalGroup(
             VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(VitalSignsPageLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ClearVitalSigns)
-                .addGap(18, 18, 18)
-                .addComponent(AddVitalSignsToEncounter)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DoctorHomeBack)
-                .addContainerGap())
-            .addGroup(VitalSignsPageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(usernameVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(usernameVitalSignsRecording1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(72, 72, 72)
-                .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(PatientID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                        .addComponent(userName, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(366, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VitalSignsPageLayout.createSequentialGroup()
+                        .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(VitalSignsPageLayout.createSequentialGroup()
+                                .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(usernameVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(encounterIDVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(VitalSignsPageLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(encounterID, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(respirationRateIDVitalSignsRecording4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(VitalSignsPageLayout.createSequentialGroup()
+                                                .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(bloodGroupIDVitalSignsRecording)
+                                                    .addComponent(patientAgeVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(bloodGroupFieldVitalSignsRecording, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(patientAgeFieldVitalSignsRecording, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(VitalSignsPageLayout.createSequentialGroup()
+                                                .addComponent(temperatureVitalSignsRecording3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(patientAgeFieldVitalSignsRecording4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(27, 27, 27))
+                                    .addGroup(VitalSignsPageLayout.createSequentialGroup()
+                                        .addGap(72, 72, 72)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(34, 34, 34))))
+                            .addGroup(VitalSignsPageLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(ClearVitalSigns)))
+                        .addGap(18, 18, 18)
+                        .addComponent(AddVitalSignsToEncounter)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(DoctorHomeBack)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VitalSignsPageLayout.createSequentialGroup()
+                        .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(VitalSignsPageLayout.createSequentialGroup()
+                                .addComponent(bloodPressureIDVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(patientAgeFieldVitalSignsRecording2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(VitalSignsPageLayout.createSequentialGroup()
+                                .addComponent(heightVitalSignsRecording1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(patientAgeFieldVitalSignsRecording1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel9)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(patientAgeFieldVitalSignsRecording3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(262, 262, 262))
+                    .addGroup(VitalSignsPageLayout.createSequentialGroup()
+                        .addComponent(diagnosisVitalSignsRecording1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
+                            .addComponent(jScrollPane5))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, VitalSignsPageLayout.createSequentialGroup()
+                .addComponent(ailmentVitalSignsRecording2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         VitalSignsPageLayout.setVerticalGroup(
             VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -858,12 +962,37 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(usernameVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(usernameVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(patientAgeFieldVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(patientAgeVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PatientID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(usernameVitalSignsRecording1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 384, Short.MAX_VALUE)
+                    .addComponent(encounterID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(encounterIDVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bloodGroupIDVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bloodGroupFieldVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(heightVitalSignsRecording1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(temperatureVitalSignsRecording3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(patientAgeFieldVitalSignsRecording1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(patientAgeFieldVitalSignsRecording4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bloodPressureIDVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(respirationRateIDVitalSignsRecording4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(patientAgeFieldVitalSignsRecording2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(patientAgeFieldVitalSignsRecording3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ailmentVitalSignsRecording2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(diagnosisVitalSignsRecording1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(DoctorHomeBack)
                     .addComponent(AddVitalSignsToEncounter)
@@ -1059,7 +1188,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         doctorTable.setRowCount(0);
         for (Encounter enc : encHistory.getEncounterHistory()){
             if(enc.getEncounterWith().equals(name)){
-                String docTableIn[] = {enc.getUsername(), enc.getEncounterDate(), enc.getAilment()};                
+                String docTableIn[] = {enc.getEncounterID(), enc.getUsername(), enc.getEncounterDate(), enc.getAilment()};                
                 doctorTable.addRow(docTableIn);
             }
         }
@@ -1146,6 +1275,21 @@ public class hospitalManagement extends javax.swing.JFrame {
 
     private void AddVitalSignsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddVitalSignsActionPerformed
         SplitPanelPaint(VitalSignsPage);
+        Encounter enc = new Encounter();
+        int row = DoctorAppointment.getSelectedRow();
+        if (row != -1 ){
+            String ID = DoctorAppointment.getValueAt(row, 0).toString();
+            for (Encounter e:encHistory.getEncounterHistory()){
+                if (e.getEncounterID().equals(ID)){
+                    enc = e;
+                }
+            }
+            userName.setText(enc.getUsername());
+            bloodGroupFieldVitalSignsRecording.setText("A+");
+            encounterID.setText(enc.getEncounterID());
+            //need to add age as well
+            jTextArea4.setText(enc.getAilment());
+        }
     }//GEN-LAST:event_AddVitalSignsActionPerformed
 
     private void DoctorHomeBack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorHomeBack1ActionPerformed
@@ -1167,6 +1311,12 @@ public class hospitalManagement extends javax.swing.JFrame {
         HeartRate.setText("Heart rate: "+0);
         ViewAppointmentAilment.setText("Ailment: "+enc.getAilment()+" "+enc.getRole());
     }//GEN-LAST:event_PatienAppointmentHistoryMouseClicked
+
+    private void AddVitalSignsToEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddVitalSignsToEncounterActionPerformed
+        int indexedVal = encHistory.getEncounterHistory().indexOf(encounterID.getText());
+        Encounter enc = encHistory.getEncounterHistory().get(indexedVal);
+        System.out.println(enc.getEncounterID());
+    }//GEN-LAST:event_AddVitalSignsToEncounterActionPerformed
     
     public Person ValidationPerson(){
         Person specificP = new Person();
@@ -1257,7 +1407,6 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JPanel PatientEncounterHistory;
     private javax.swing.JTable PatientEncounterHistoryDoctor;
     private javax.swing.JPanel PatientHome;
-    private javax.swing.JTextField PatientID;
     private javax.swing.JPanel Register;
     private javax.swing.JPanel RightComponent;
     private javax.swing.JButton SubmitGrievences;
@@ -1269,11 +1418,19 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JPanel ViewPatientAppointment;
     private javax.swing.JPanel VitalSignsPage;
     private javax.swing.JPanel Workspace;
+    private javax.swing.JLabel ailmentVitalSignsRecording2;
+    private javax.swing.JTextField bloodGroupFieldVitalSignsRecording;
+    private javax.swing.JLabel bloodGroupIDVitalSignsRecording;
+    private javax.swing.JLabel bloodPressureIDVitalSignsRecording;
     private javax.swing.JButton createAppointment;
+    private javax.swing.JLabel diagnosisVitalSignsRecording1;
     private javax.swing.JLabel emailID;
+    private javax.swing.JTextField encounterID;
+    private javax.swing.JLabel encounterIDVitalSignsRecording;
     private javax.swing.JRadioButton femaleButton;
     private javax.swing.JLabel gender;
     private javax.swing.ButtonGroup genderButtonGroup;
+    private javax.swing.JLabel heightVitalSignsRecording1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1288,16 +1445,21 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextField mailIDGrievences;
     private javax.swing.JTextField mailIDTextField;
     private javax.swing.JRadioButton maleButton;
@@ -1308,18 +1470,25 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JLabel password1;
     private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JPasswordField passwordTextField1;
+    private javax.swing.JTextField patientAgeFieldVitalSignsRecording;
+    private javax.swing.JTextField patientAgeFieldVitalSignsRecording1;
+    private javax.swing.JTextField patientAgeFieldVitalSignsRecording2;
+    private javax.swing.JTextField patientAgeFieldVitalSignsRecording3;
+    private javax.swing.JTextField patientAgeFieldVitalSignsRecording4;
+    private javax.swing.JLabel patientAgeVitalSignsRecording;
     private javax.swing.JLabel phone;
     private javax.swing.JTextField phoneTextField;
     private javax.swing.JButton register;
+    private javax.swing.JLabel respirationRateIDVitalSignsRecording4;
     private javax.swing.JLabel role;
     private javax.swing.JComboBox<String> rolesComboBox;
+    private javax.swing.JLabel temperatureVitalSignsRecording3;
     private javax.swing.JTextField userName;
     private javax.swing.JLabel username;
     private javax.swing.JLabel username1;
     private javax.swing.JTextField usernameTextField;
     private javax.swing.JTextField usernameTextField1;
     private javax.swing.JLabel usernameVitalSignsRecording;
-    private javax.swing.JLabel usernameVitalSignsRecording1;
     private javax.swing.JButton viewAppoitnmentPatient;
     // End of variables declaration//GEN-END:variables
 }
