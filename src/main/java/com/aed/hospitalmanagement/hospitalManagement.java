@@ -973,6 +973,13 @@ public class hospitalManagement extends javax.swing.JFrame {
         return encID;
     }
     
+    public String patIDGen(){
+        Random ran = new Random();
+        int idInt = ran.nextInt(100);
+        String encID = "PAT-"+idInt;
+        return encID;
+    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         PanelPaint(Register);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -1006,6 +1013,7 @@ public class hospitalManagement extends javax.swing.JFrame {
             person.setRole(rolesComboBox.getSelectedItem().toString());
             person.setDateOfBirth(jDateChooser1.getDate());
             person.setPhone(Integer.parseInt(phoneTextField.getText()));
+            person.setUniqueIDPatient(patIDGen());
         }
 
         PanelPaint(Login);

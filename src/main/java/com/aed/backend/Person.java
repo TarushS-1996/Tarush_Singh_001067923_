@@ -18,6 +18,15 @@ public class Person {
     private int phone;
     private String gender;
     private Date dateOfBirth;
+    private String uniqueIDPatient;
+
+    public String getUniqueIDPatient() {
+        return uniqueIDPatient;
+    }
+
+    public void setUniqueIDPatient(String uniqueIDPatient) {
+        this.uniqueIDPatient = uniqueIDPatient;
+    }
 
 
     public Date getDateOfBirth() {
