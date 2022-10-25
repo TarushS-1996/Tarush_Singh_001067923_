@@ -139,6 +139,10 @@ public class hospitalManagement extends javax.swing.JFrame {
         DoctorHomeBack = new javax.swing.JButton();
         AddVitalSignsToEncounter = new javax.swing.JButton();
         ClearVitalSigns = new javax.swing.JButton();
+        userName = new javax.swing.JTextField();
+        PatientID = new javax.swing.JTextField();
+        usernameVitalSignsRecording = new javax.swing.JLabel();
+        usernameVitalSignsRecording1 = new javax.swing.JLabel();
         Grievences = new javax.swing.JPanel();
         MailIDGrievencesLabel = new javax.swing.JLabel();
         mailIDGrievences = new javax.swing.JTextField();
@@ -464,7 +468,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                     .addGroup(PatientHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(viewAppoitnmentPatient, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(createAppointment, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addContainerGap(365, Short.MAX_VALUE))
         );
         PatientHomeLayout.setVerticalGroup(
             PatientHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -517,7 +521,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         CreatePatientAppointment.setLayout(CreatePatientAppointmentLayout);
         CreatePatientAppointmentLayout.setHorizontalGroup(
             CreatePatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)
             .addGroup(CreatePatientAppointmentLayout.createSequentialGroup()
                 .addGroup(CreatePatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CreatePatientAppointmentLayout.createSequentialGroup()
@@ -578,11 +582,11 @@ public class hospitalManagement extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Appointment with", "Appointment date", "Diagnosis"
+                "Encounter ID", "Appointment with", "Appointment date", "Diagnosis"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, true, false
+                true, true, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -596,7 +600,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(PatienAppointmentHistory);
         if (PatienAppointmentHistory.getColumnModel().getColumnCount() > 0) {
-            PatienAppointmentHistory.getColumnModel().getColumn(2).setResizable(false);
+            PatienAppointmentHistory.getColumnModel().getColumn(3).setResizable(false);
         }
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 17)); // NOI18N
@@ -623,7 +627,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         ViewPatientAppointment.setLayout(ViewPatientAppointmentLayout);
         ViewPatientAppointmentLayout.setHorizontalGroup(
             ViewPatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
+            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)
             .addGroup(ViewPatientAppointmentLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ViewPatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -706,7 +710,7 @@ public class hospitalManagement extends javax.swing.JFrame {
             DoctorHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DoctorHomeLayout.createSequentialGroup()
                 .addGroup(DoctorHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 752, Short.MAX_VALUE)
                     .addGroup(DoctorHomeLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(DoctorHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -772,7 +776,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addGroup(PatientEncounterHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PatientEncounterHistoryLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE))
                     .addGroup(PatientEncounterHistoryLayout.createSequentialGroup()
                         .addGroup(PatientEncounterHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PatientEncounterHistoryLayout.createSequentialGroup()
@@ -817,15 +821,15 @@ public class hospitalManagement extends javax.swing.JFrame {
 
         ClearVitalSigns.setText("Clear");
 
+        usernameVitalSignsRecording.setText("Username:");
+
+        usernameVitalSignsRecording1.setText("Username:");
+
         javax.swing.GroupLayout VitalSignsPageLayout = new javax.swing.GroupLayout(VitalSignsPage);
         VitalSignsPage.setLayout(VitalSignsPageLayout);
         VitalSignsPageLayout.setHorizontalGroup(
-            VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(VitalSignsPageLayout.createSequentialGroup()
-                .addGap(197, 197, 197)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(207, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VitalSignsPageLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ClearVitalSigns)
                 .addGap(18, 18, 18)
@@ -833,13 +837,33 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(DoctorHomeBack)
                 .addContainerGap())
+            .addGroup(VitalSignsPageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(usernameVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usernameVitalSignsRecording1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(72, 72, 72)
+                .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(PatientID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                        .addComponent(userName, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(366, Short.MAX_VALUE))
         );
         VitalSignsPageLayout.setVerticalGroup(
             VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(VitalSignsPageLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 456, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usernameVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PatientID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usernameVitalSignsRecording1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 384, Short.MAX_VALUE)
                 .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(DoctorHomeBack)
                     .addComponent(AddVitalSignsToEncounter)
@@ -1082,14 +1106,18 @@ public class hospitalManagement extends javax.swing.JFrame {
         enc.setEncounterDate(PatientAppointmentDateChooser.getDate().toString());
         enc.setEncounterWith(PatientAppointmentDrList.getSelectedItem().toString());
         enc.setEncounterID(encIDGen());
-        DefaultTableModel patientTable = (DefaultTableModel) PatienAppointmentHistory.getModel();
-        String dataIn[] = {enc.getEncounterWith(), enc.getEncounterDate(), enc.getAilment()};
+        //DefaultTableModel patientTable = (DefaultTableModel) PatienAppointmentHistory.getModel();
+        //String dataIn[] = {enc.getEncounterWith(), enc.getEncounterDate(), enc.getAilment()};
         //patientTable.addRow(dataIn);
         
     }//GEN-LAST:event_PatientAppointmentSubmitActionPerformed
 
     private void BackToPatientHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToPatientHomeActionPerformed
         SplitPanelPaint(PatientHome);
+        ViewAppointmentUsername.setText("Username: ");
+        ViewAppointmentWith.setText("Appointment with: ");
+        ViewAppointmentDate.setText("Appointment date: ");
+        HeartRate.setText("Heart rate: ");
     }//GEN-LAST:event_BackToPatientHomeActionPerformed
 
     private void viewAppoitnmentPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAppoitnmentPatientActionPerformed
@@ -1098,7 +1126,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         patientTable.setRowCount(0);
         for (Encounter enc : encHistory.getEncounterHistory()){
             if (enc.getUsername().equals(ValidationPerson().getUsername())){
-                String dataIn[] = {enc.getEncounterWith(), enc.getEncounterDate(), enc.getAilment()};
+                String dataIn[] = {enc.getEncounterID(), enc.getEncounterWith(), enc.getEncounterDate(), enc.getAilment()};
                 patientTable.addRow(dataIn);
             }
         }
@@ -1122,6 +1150,8 @@ public class hospitalManagement extends javax.swing.JFrame {
 
     private void PatienAppointmentHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PatienAppointmentHistoryMouseClicked
         int row = PatienAppointmentHistory.getSelectedRow();
+        //Need to use Encounter ID to show the right data population.
+        String id = PatienAppointmentHistory.getValueAt(row, 0).toString();
         Encounter enc = encHistory.getEncounterHistory().get(row);
         ViewAppointmentUsername.setText("Username: "+enc.getUsername());
         ViewAppointmentWith.setText("Appointment with: "+enc.getEncounterWith());
@@ -1219,6 +1249,7 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JPanel PatientEncounterHistory;
     private javax.swing.JTable PatientEncounterHistoryDoctor;
     private javax.swing.JPanel PatientHome;
+    private javax.swing.JTextField PatientID;
     private javax.swing.JPanel Register;
     private javax.swing.JPanel RightComponent;
     private javax.swing.JButton SubmitGrievences;
@@ -1274,10 +1305,13 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JButton register;
     private javax.swing.JLabel role;
     private javax.swing.JComboBox<String> rolesComboBox;
+    private javax.swing.JTextField userName;
     private javax.swing.JLabel username;
     private javax.swing.JLabel username1;
     private javax.swing.JTextField usernameTextField;
     private javax.swing.JTextField usernameTextField1;
+    private javax.swing.JLabel usernameVitalSignsRecording;
+    private javax.swing.JLabel usernameVitalSignsRecording1;
     private javax.swing.JButton viewAppoitnmentPatient;
     // End of variables declaration//GEN-END:variables
 }

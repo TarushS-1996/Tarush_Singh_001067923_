@@ -511,7 +511,7 @@
                                           <Component id="createAppointment" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="206" max="32767" attributes="0"/>
+                                  <EmptySpace pref="365" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -571,7 +571,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jSeparator1" alignment="0" pref="599" max="32767" attributes="0"/>
+                              <Component id="jSeparator1" alignment="0" pref="758" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
@@ -730,7 +730,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jSeparator2" alignment="0" pref="599" max="32767" attributes="0"/>
+                              <Component id="jSeparator2" alignment="0" pref="758" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -797,7 +797,8 @@
                             <Component class="javax.swing.JTable" name="PatienAppointmentHistory">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="3" rowCount="0">
+                                  <Table columnCount="4" rowCount="0">
+                                    <Column editable="true" title="Encounter ID" type="java.lang.Object"/>
                                     <Column editable="true" title="Appointment with" type="java.lang.Object"/>
                                     <Column editable="true" title="Appointment date" type="java.lang.Object"/>
                                     <Column editable="false" title="Diagnosis" type="java.lang.Object"/>
@@ -805,6 +806,11 @@
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                   <TableColumnModel selectionModel="0">
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
                                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                       <Title/>
                                       <Editor/>
@@ -889,7 +895,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane3" alignment="1" pref="593" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane3" alignment="1" pref="752" max="32767" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1022,7 +1028,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jScrollPane4" pref="587" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane4" pref="746" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1155,12 +1161,7 @@
 
                       <Layout>
                         <DimensionLayout dim="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" min="-2" pref="195" max="-2" attributes="0"/>
-                                  <EmptySpace pref="207" max="32767" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="ClearVitalSigns" min="-2" max="-2" attributes="0"/>
@@ -1170,6 +1171,22 @@
                                   <Component id="DoctorHomeBack" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="usernameVitalSignsRecording" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Component id="usernameVitalSignsRecording1" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel7" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="PatientID" alignment="0" pref="159" max="32767" attributes="0"/>
+                                          <Component id="userName" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace pref="366" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
@@ -1177,7 +1194,17 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                   <Component id="jLabel7" min="-2" pref="44" max="-2" attributes="0"/>
-                                  <EmptySpace pref="456" max="32767" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="userName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="usernameVitalSignsRecording" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="PatientID" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="usernameVitalSignsRecording1" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="384" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="DoctorHomeBack" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="AddVitalSignsToEncounter" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1213,6 +1240,20 @@
                         <Component class="javax.swing.JButton" name="ClearVitalSigns">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Clear"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="userName">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="PatientID">
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="usernameVitalSignsRecording">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Username:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="usernameVitalSignsRecording1">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Username:"/>
                           </Properties>
                         </Component>
                       </SubComponents>
