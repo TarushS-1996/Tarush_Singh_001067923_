@@ -451,18 +451,18 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="34" max="32767" attributes="0"/>
+                              <EmptySpace pref="35" max="32767" attributes="0"/>
                               <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="518" max="32767" attributes="0"/>
+                              <EmptySpace pref="512" max="32767" attributes="0"/>
                               <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1202,7 +1202,7 @@
                                                               <Group type="102" alignment="0" attributes="0">
                                                                   <Component id="temperatureVitalSignsRecording3" min="-2" pref="119" max="-2" attributes="0"/>
                                                                   <EmptySpace max="-2" attributes="0"/>
-                                                                  <Component id="patientAgeFieldVitalSignsRecording4" min="-2" pref="45" max="-2" attributes="0"/>
+                                                                  <Component id="temperatureFieldVitalSignsRecording4" min="-2" pref="45" max="-2" attributes="0"/>
                                                               </Group>
                                                           </Group>
                                                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
@@ -1230,23 +1230,31 @@
                                               <Group type="102" attributes="0">
                                                   <Component id="bloodPressureIDVitalSignsRecording" min="-2" pref="119" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="patientAgeFieldVitalSignsRecording2" min="-2" pref="45" max="-2" attributes="0"/>
+                                                  <Component id="bloodPressureFieldVitalSignsRecording" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="heightVitalSignsRecording1" min="-2" pref="119" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="patientAgeFieldVitalSignsRecording1" min="-2" pref="45" max="-2" attributes="0"/>
+                                                  <Component id="heightFieldVitalSignsRecording1" min="-2" pref="45" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="patientAgeFieldVitalSignsRecording3" min="-2" pref="45" max="-2" attributes="0"/>
+                                          <Component id="respirationRateFieldVitalSignsRecording" min="-2" pref="45" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="262" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="diagnosisVitalSignsRecording1" min="-2" pref="119" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="diagnosisVitalSignsRecording1" min="-2" pref="119" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="ailmentVitalSignsRecording2" min="-2" pref="119" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="jScrollPane6" pref="402" max="32767" attributes="0"/>
                                               <Component id="jScrollPane5" max="32767" attributes="0"/>
@@ -1254,10 +1262,6 @@
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="ailmentVitalSignsRecording2" min="-2" pref="119" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1284,16 +1288,16 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="heightVitalSignsRecording1" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                                       <Component id="temperatureVitalSignsRecording3" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
-                                      <Component id="patientAgeFieldVitalSignsRecording1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="heightFieldVitalSignsRecording1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="patientAgeFieldVitalSignsRecording4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="temperatureFieldVitalSignsRecording4" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="bloodPressureIDVitalSignsRecording" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                                       <Component id="respirationRateIDVitalSignsRecording4" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                                      <Component id="patientAgeFieldVitalSignsRecording2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="patientAgeFieldVitalSignsRecording3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bloodPressureFieldVitalSignsRecording" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="respirationRateFieldVitalSignsRecording" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1394,18 +1398,18 @@
                             <Property name="text" type="java.lang.String" value="Respiration rate:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="patientAgeFieldVitalSignsRecording1">
+                        <Component class="javax.swing.JTextField" name="heightFieldVitalSignsRecording1">
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel9">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="cm"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="patientAgeFieldVitalSignsRecording2">
+                        <Component class="javax.swing.JTextField" name="bloodPressureFieldVitalSignsRecording">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="patientAgeFieldVitalSignsRecording3">
+                        <Component class="javax.swing.JTextField" name="respirationRateFieldVitalSignsRecording">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="patientAgeFieldVitalSignsRecording4">
+                        <Component class="javax.swing.JTextField" name="temperatureFieldVitalSignsRecording4">
                         </Component>
                         <Container class="javax.swing.JScrollPane" name="jScrollPane5">
                           <AuxValues>

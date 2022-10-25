@@ -15,6 +15,15 @@ public class Encounter extends VitalSigns{
     private String encounterDate;
     private String encounterWith;
     private String encounterID;
+    private String diagnosis;
+
+    public String getDiagnosis() {
+        return diagnosis;
+    }
+
+    public void setDiagnosis(String diagnosis) {
+        this.diagnosis = diagnosis;
+    }
 
     public String getEncounterID() {
         return encounterID;
