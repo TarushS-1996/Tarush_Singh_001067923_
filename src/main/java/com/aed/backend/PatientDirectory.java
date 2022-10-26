@@ -11,22 +11,22 @@ import java.util.ArrayList;
  * @author tarush
  */
 public class PatientDirectory {
-    private ArrayList<Person> dir = new ArrayList<>();
+    private ArrayList<Patient> dir = new ArrayList<>();
     
     public PatientDirectory(){
         this.dir = new ArrayList<>();
     }
 
-    public void setDir(ArrayList<Person> dir) {
+    public void setDir(ArrayList<Patient> dir) {
         this.dir = dir;
     }
     
-    public ArrayList<Person> getDir() {
+    public ArrayList<Patient> getDir() {
         return dir;
     }
     
-    public Person addPerson(){
-        Person person = new Person();
+    public Patient addPerson(){
+        Patient person = new Patient();
         dir.add(person);
         return person;
     }
