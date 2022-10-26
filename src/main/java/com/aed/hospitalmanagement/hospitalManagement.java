@@ -128,6 +128,11 @@ public class hospitalManagement extends javax.swing.JFrame {
         ViewAppointmentDate = new javax.swing.JLabel();
         HeartRate = new javax.swing.JLabel();
         ViewAppointmentAilment = new javax.swing.JLabel();
+        BloodpressureViewAppointment = new javax.swing.JLabel();
+        temperatureViewAppointment = new javax.swing.JLabel();
+        respirationRateViewAppointment = new javax.swing.JLabel();
+        DiagnosisViewAppointment = new javax.swing.JLabel();
+        HeightViewAppointment = new javax.swing.JLabel();
         DoctorHome = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         ViewEncounterHistoryDoctor = new javax.swing.JButton();
@@ -449,7 +454,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+                .addContainerGap(94, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addGap(28, 28, 28))
         );
@@ -494,7 +499,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                     .addGroup(PatientHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(viewAppoitnmentPatient, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(createAppointment, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addContainerGap(259, Short.MAX_VALUE))
         );
         PatientHomeLayout.setVerticalGroup(
             PatientHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -547,7 +552,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         CreatePatientAppointment.setLayout(CreatePatientAppointmentLayout);
         CreatePatientAppointmentLayout.setHorizontalGroup(
             CreatePatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE)
             .addGroup(CreatePatientAppointmentLayout.createSequentialGroup()
                 .addGroup(CreatePatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CreatePatientAppointmentLayout.createSequentialGroup()
@@ -608,7 +613,7 @@ public class hospitalManagement extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Encounter ID", "Appointment with", "Appointment date", "Diagnosis"
+                "Encounter ID", "Appointment with", "Appointment date", "Ailment"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -649,11 +654,21 @@ public class hospitalManagement extends javax.swing.JFrame {
 
         ViewAppointmentAilment.setText("Ailment:");
 
+        BloodpressureViewAppointment.setText("Blood Pressure:");
+
+        temperatureViewAppointment.setText("Temperature:");
+
+        respirationRateViewAppointment.setText("Respiration Rate:");
+
+        DiagnosisViewAppointment.setText("Diagnosis:");
+
+        HeightViewAppointment.setText("Height:");
+
         javax.swing.GroupLayout ViewPatientAppointmentLayout = new javax.swing.GroupLayout(ViewPatientAppointment);
         ViewPatientAppointment.setLayout(ViewPatientAppointmentLayout);
         ViewPatientAppointmentLayout.setHorizontalGroup(
             ViewPatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
+            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE)
             .addGroup(ViewPatientAppointmentLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ViewPatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -668,10 +683,19 @@ public class hospitalManagement extends javax.swing.JFrame {
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(ViewAppointmentUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(ViewPatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(HeartRate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(ViewAppointmentDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(ViewAppointmentWith, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE))
-                            .addComponent(ViewAppointmentAilment, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ViewAppointmentAilment, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DiagnosisViewAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(ViewPatientAppointmentLayout.createSequentialGroup()
+                                .addComponent(HeartRate, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(BloodpressureViewAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(temperatureViewAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(respirationRateViewAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(HeightViewAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -689,10 +713,18 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ViewAppointmentDate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(HeartRate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ViewPatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(HeartRate)
+                    .addComponent(BloodpressureViewAppointment)
+                    .addComponent(temperatureViewAppointment)
+                    .addComponent(respirationRateViewAppointment))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(HeightViewAppointment)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ViewAppointmentAilment)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addGap(12, 12, 12)
+                .addComponent(DiagnosisViewAppointment)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BackToPatientHome)
@@ -736,7 +768,7 @@ public class hospitalManagement extends javax.swing.JFrame {
             DoctorHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DoctorHomeLayout.createSequentialGroup()
                 .addGroup(DoctorHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
                     .addGroup(DoctorHomeLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(DoctorHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -802,7 +834,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addGroup(PatientEncounterHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PatientEncounterHistoryLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 728, Short.MAX_VALUE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE))
                     .addGroup(PatientEncounterHistoryLayout.createSequentialGroup()
                         .addGroup(PatientEncounterHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PatientEncounterHistoryLayout.createSequentialGroup()
@@ -1011,7 +1043,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         Workspace.setLayout(WorkspaceLayout);
         WorkspaceLayout.setHorizontalGroup(
             WorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 855, Short.MAX_VALUE)
         );
         WorkspaceLayout.setVerticalGroup(
             WorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1311,7 +1343,12 @@ public class hospitalManagement extends javax.swing.JFrame {
         ViewAppointmentUsername.setText("Username: "+enc.getUsername());
         ViewAppointmentWith.setText("Appointment with: "+enc.getEncounterWith());
         ViewAppointmentDate.setText("Appointment date: "+enc.getEncounterDate());
-        HeartRate.setText("Heart rate: "+enc.getBloodPressure());
+        HeartRate.setText("Heart rate: "+enc.getHeartRate());
+        BloodpressureViewAppointment.setText("Blood Pressure: "+enc.getBloodPressure());
+        temperatureViewAppointment.setText("Temperature: "+enc.getBodyTemperatur());
+        respirationRateViewAppointment.setText("Respiration Rate: "+enc.getRespirationRate());
+        HeightViewAppointment.setText("Height: "+enc.getHeight() + "cm.");
+        DiagnosisViewAppointment.setText("Diagnosis: "+enc.getDiagnosis());
         ViewAppointmentAilment.setText("Ailment: "+enc.getAilment()+" "+enc.getRole());
     }//GEN-LAST:event_PatienAppointmentHistoryMouseClicked
 
@@ -1388,16 +1425,19 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JLabel AppLogo;
     private javax.swing.JLabel AppLogo1;
     private javax.swing.JButton BackToPatientHome;
+    private javax.swing.JLabel BloodpressureViewAppointment;
     private javax.swing.JButton CancelGrievences;
     private javax.swing.JButton ClearVitalSigns;
     private javax.swing.JPanel CreatePatientAppointment;
     private javax.swing.JLabel DOB;
+    private javax.swing.JLabel DiagnosisViewAppointment;
     private javax.swing.JTable DoctorAppointment;
     private javax.swing.JPanel DoctorHome;
     private javax.swing.JButton DoctorHomeBack;
     private javax.swing.JButton DoctorHomeBack1;
     private javax.swing.JPanel Grievences;
     private javax.swing.JLabel HeartRate;
+    private javax.swing.JLabel HeightViewAppointment;
     private javax.swing.JPanel Login;
     private javax.swing.JLabel MailIDGrievencesLabel;
     private javax.swing.JTextField NumberGrievences;
@@ -1487,9 +1527,11 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JButton register;
     private javax.swing.JTextField respirationRateFieldVitalSignsRecording;
     private javax.swing.JLabel respirationRateIDVitalSignsRecording4;
+    private javax.swing.JLabel respirationRateViewAppointment;
     private javax.swing.JLabel role;
     private javax.swing.JComboBox<String> rolesComboBox;
     private javax.swing.JTextField temperatureFieldVitalSignsRecording4;
+    private javax.swing.JLabel temperatureViewAppointment;
     private javax.swing.JLabel temperatureVitalSignsRecording3;
     private javax.swing.JTextField userName;
     private javax.swing.JLabel username;

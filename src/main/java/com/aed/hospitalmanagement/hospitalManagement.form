@@ -417,7 +417,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jSplitPane1" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jSplitPane1" alignment="1" pref="855" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -451,7 +451,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="35" max="32767" attributes="0"/>
+                              <EmptySpace pref="94" max="32767" attributes="0"/>
                               <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
@@ -511,7 +511,7 @@
                                           <Component id="createAppointment" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="347" max="32767" attributes="0"/>
+                                  <EmptySpace pref="259" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -571,7 +571,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jSeparator1" alignment="0" pref="740" max="32767" attributes="0"/>
+                              <Component id="jSeparator1" alignment="0" pref="652" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
@@ -730,7 +730,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jSeparator2" alignment="0" pref="740" max="32767" attributes="0"/>
+                              <Component id="jSeparator2" alignment="0" pref="652" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -747,11 +747,21 @@
                                               </Group>
                                               <Component id="ViewAppointmentUsername" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
                                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="HeartRate" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="ViewAppointmentDate" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="ViewAppointmentWith" alignment="0" pref="251" max="32767" attributes="0"/>
                                               </Group>
                                               <Component id="ViewAppointmentAilment" alignment="0" min="-2" pref="381" max="-2" attributes="0"/>
+                                              <Component id="DiagnosisViewAppointment" alignment="0" min="-2" pref="381" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="HeartRate" min="-2" pref="120" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="BloodpressureViewAppointment" min="-2" pref="144" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="temperatureViewAppointment" min="-2" pref="127" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="respirationRateViewAppointment" min="-2" pref="146" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="HeightViewAppointment" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
@@ -774,10 +784,19 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="ViewAppointmentDate" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="HeartRate" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="HeartRate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="BloodpressureViewAppointment" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="temperatureViewAppointment" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="respirationRateViewAppointment" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="15" max="32767" attributes="0"/>
+                                  <Component id="HeightViewAppointment" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="ViewAppointmentAilment" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="81" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                  <Component id="DiagnosisViewAppointment" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jScrollPane2" min="-2" pref="249" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="BackToPatientHome" min="-2" max="-2" attributes="0"/>
@@ -801,7 +820,7 @@
                                     <Column editable="true" title="Encounter ID" type="java.lang.Object"/>
                                     <Column editable="true" title="Appointment with" type="java.lang.Object"/>
                                     <Column editable="true" title="Appointment date" type="java.lang.Object"/>
-                                    <Column editable="false" title="Diagnosis" type="java.lang.Object"/>
+                                    <Column editable="false" title="Ailment" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -881,6 +900,31 @@
                             <Property name="text" type="java.lang.String" value="Ailment:"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JLabel" name="BloodpressureViewAppointment">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Blood Pressure:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="temperatureViewAppointment">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Temperature:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="respirationRateViewAppointment">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Respiration Rate:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="DiagnosisViewAppointment">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Diagnosis:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="HeightViewAppointment">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Height:"/>
+                          </Properties>
+                        </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="DoctorHome">
@@ -895,7 +939,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane3" alignment="1" pref="734" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane3" alignment="1" pref="646" max="32767" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1034,7 +1078,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jScrollPane4" pref="728" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane4" pref="640" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
