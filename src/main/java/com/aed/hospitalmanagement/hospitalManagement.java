@@ -1032,26 +1032,20 @@ public class hospitalManagement extends javax.swing.JFrame {
 
         patientListForSysAdmin.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Patient ID", "Patient Name", "Patient Gender", "Patient Mail ID", "Patietn Contact Number"
             }
         ));
         jScrollPane7.setViewportView(patientListForSysAdmin);
 
         doctorListForSysAdmin.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Doctor ID", "Doctor Name", "Doctor Mail ID", "Doctor Contact Number"
             }
         ));
         jScrollPane8.setViewportView(doctorListForSysAdmin);
@@ -1068,13 +1062,13 @@ public class hospitalManagement extends javax.swing.JFrame {
                         .addGap(221, 221, 221)
                         .addComponent(SystemAdminHomeTitle))
                     .addGroup(SystemAdminHomeLayout.createSequentialGroup()
-                        .addGap(92, 92, 92)
+                        .addGap(15, 15, 15)
                         .addGroup(SystemAdminHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(accountDisable)
                             .addGroup(SystemAdminHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(115, Short.MAX_VALUE))
+                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         SystemAdminHomeLayout.setVerticalGroup(
             SystemAdminHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1228,9 +1222,12 @@ public class hospitalManagement extends javax.swing.JFrame {
             doc.setRole(rolesComboBox.getSelectedItem().toString());
             doc.setDateOfBirth(jDateChooser1.getDate());
             doc.setPhone(Integer.parseInt(phoneTextField.getText()));
+            doc.setGender(genderString);
             doc.setMdeicalLicenseNumber(medicalLicenseNumberTextField.getText());
             System.out.println(docDir.getDoctorDir().size());
             PatientAppointmentDrList.addItem(doc.getUsername());
+            sysAdminDocList();
+            
         }else if(rolesComboBox.getSelectedItem().toString().equals("Patient")){
             Patient person = dir.addPerson();
             person.setUsername(usernameTextField1.getText());
@@ -1239,7 +1236,10 @@ public class hospitalManagement extends javax.swing.JFrame {
             person.setRole(rolesComboBox.getSelectedItem().toString());
             person.setDateOfBirth(jDateChooser1.getDate());
             person.setPhone(Integer.parseInt(phoneTextField.getText()));
+            person.setGender(genderString);
             person.setUniqueID(patIDGen());
+            sysAdminPatientList();
+            
         }else if(rolesComboBox.getSelectedItem().toString().equals("System Administration")){
             SystemAdmin admin = sysAdminDir.addSystemAdmin();
             admin.setUsername(usernameTextField1.getText());
@@ -1247,6 +1247,7 @@ public class hospitalManagement extends javax.swing.JFrame {
             admin.setMail(mailIDTextField.getText());
             admin.setRole(rolesComboBox.getSelectedItem().toString());
             admin.setDateOfBirth(jDateChooser1.getDate());
+            admin.setGender(genderString);
             admin.setPhone(Integer.parseInt(phoneTextField.getText()));
             admin.setAdminID(patIDGen());            
         }
@@ -1300,6 +1301,25 @@ public class hospitalManagement extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public void sysAdminPatientList(){
+        DefaultTableModel sysAdminPatList = (DefaultTableModel) patientListForSysAdmin.getModel();
+        sysAdminPatList.setRowCount(0);
+        for (Patient pat: dir.getDir()){
+          
+            String saPat[] = {pat.getUniqueID(), pat.getUsername(), pat.getGender(), pat.getMail(), String.valueOf(pat.getPhone())};
+            sysAdminPatList.addRow(saPat);
+        }
+    }
+    
+    public void sysAdminDocList(){
+        DefaultTableModel sysAdminDocList = (DefaultTableModel)doctorListForSysAdmin.getModel();
+        sysAdminDocList.setRowCount(0);
+        for (DoctorPerson dp:docDir.getDoctorDir()){
+            String saDoc[] = {dp.getMdeicalLicenseNumber(), dp.getUsername(), dp.getMail(), String.valueOf(dp.getPhone())};
+            sysAdminDocList.addRow(saDoc);
+        }
+    }
+    
     public void doctorAppointmentsList(String name){
         DefaultTableModel doctorTable = (DefaultTableModel)DoctorAppointment.getModel();
         doctorTable.setRowCount(0);
