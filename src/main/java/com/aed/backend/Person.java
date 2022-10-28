@@ -15,9 +15,18 @@ public class Person {
     private String password;
     private String role;
     private String mail;
+
+    public String getAccountStatus() {
+        return AccountStatus;
+    }
+
+    public void setAccountStatus(String AccountStatus) {
+        this.AccountStatus = AccountStatus;
+    }
     private int phone;
     private String gender;
     private Date dateOfBirth;
+    private String AccountStatus = "Active";
 
 
     public Date getDateOfBirth() {

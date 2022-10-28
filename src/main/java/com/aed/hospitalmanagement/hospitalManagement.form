@@ -469,7 +469,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="87" max="32767" attributes="0"/>
+                              <EmptySpace pref="88" max="32767" attributes="0"/>
                               <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
@@ -482,7 +482,7 @@
                               <Component id="leftWelcome" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               <Component id="leftAccID" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="314" max="32767" attributes="0"/>
+                              <EmptySpace pref="320" max="32767" attributes="0"/>
                               <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
@@ -562,7 +562,7 @@
                                   <Component id="createAppointment" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Component id="viewAppoitnmentPatient" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="439" max="32767" attributes="0"/>
+                                  <EmptySpace pref="442" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -828,7 +828,7 @@
                                       <Component id="temperatureViewAppointment" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="respirationRateViewAppointment" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="15" max="32767" attributes="0"/>
+                                  <EmptySpace pref="36" max="32767" attributes="0"/>
                                   <Component id="HeightViewAppointment" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="ViewAppointmentAilment" min="-2" max="-2" attributes="0"/>
@@ -1151,7 +1151,7 @@
                                   <Component id="jScrollPane4" min="-2" pref="232" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="DoctorHomeBack1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                                  <EmptySpace pref="21" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1393,7 +1393,7 @@
                                       <Component id="jScrollPane5" min="-2" pref="122" max="-2" attributes="0"/>
                                       <Component id="diagnosisVitalSignsRecording1" min="-2" pref="24" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="43" max="32767" attributes="0"/>
+                                  <EmptySpace pref="58" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="DoctorHomeBack" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="AddVitalSignsToEncounter" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1603,16 +1603,22 @@
                             <Component class="javax.swing.JTable" name="patientListForSysAdmin">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="5" rowCount="0">
+                                  <Table columnCount="6" rowCount="0">
                                     <Column editable="true" title="Patient ID" type="java.lang.Object"/>
                                     <Column editable="true" title="Patient Name" type="java.lang.Object"/>
                                     <Column editable="true" title="Patient Gender" type="java.lang.Object"/>
                                     <Column editable="true" title="Patient Mail ID" type="java.lang.Object"/>
                                     <Column editable="true" title="Patietn Contact Number" type="java.lang.Object"/>
+                                    <Column editable="true" title="Account Status" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                   <TableColumnModel selectionModel="0">
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
                                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                       <Title/>
                                       <Editor/>
@@ -1657,15 +1663,21 @@
                             <Component class="javax.swing.JTable" name="doctorListForSysAdmin">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="4" rowCount="0">
+                                  <Table columnCount="5" rowCount="0">
                                     <Column editable="true" title="Doctor ID" type="java.lang.Object"/>
                                     <Column editable="true" title="Doctor Name" type="java.lang.Object"/>
                                     <Column editable="true" title="Doctor Mail ID" type="java.lang.Object"/>
                                     <Column editable="true" title="Doctor Contact Number" type="java.lang.Object"/>
+                                    <Column editable="true" title="Account Status" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                   <TableColumnModel selectionModel="0">
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
                                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                       <Title/>
                                       <Editor/>
@@ -1692,6 +1704,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="doctorListForSysAdminMouseClicked"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -1699,6 +1714,9 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Disable Doctor Account"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="accountDisableActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>

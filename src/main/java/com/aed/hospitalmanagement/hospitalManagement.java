@@ -16,6 +16,9 @@ import com.aed.backend.SystemAdminDirectory;
 import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.LookAndFeel;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -35,6 +38,19 @@ public class hospitalManagement extends javax.swing.JFrame {
      * Creates new form hospitalManagement
      */
     public hospitalManagement() {
+        
+        try{
+            for (LookAndFeelInfo info: UIManager.getInstalledLookAndFeels()){
+                if ("Nimbus".equals(info.getName())){
+                    UIManager.setLookAndFeel((info.getClassName()));
+                    break;
+                }
+            }
+        }catch (Exception e) {
+            //If something went wrong.
+        }
+        
+        
         initComponents();
         medicalLicenseNumberTextField.setEnabled(false);
         userName.setEnabled(false);
@@ -439,7 +455,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                     .addComponent(leftWelcome))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(87, Short.MAX_VALUE)
+                .addContainerGap(88, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addGap(35, 35, 35))
         );
@@ -450,7 +466,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addComponent(leftWelcome)
                 .addGap(28, 28, 28)
                 .addComponent(leftAccID)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 320, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addGap(38, 38, 38))
         );
@@ -499,7 +515,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addComponent(createAppointment)
                 .addGap(26, 26, 26)
                 .addComponent(viewAppoitnmentPatient)
-                .addContainerGap(439, Short.MAX_VALUE))
+                .addContainerGap(442, Short.MAX_VALUE))
         );
 
         RightComponent.add(PatientHome, "card2");
@@ -707,7 +723,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                     .addComponent(BloodpressureViewAppointment)
                     .addComponent(temperatureViewAppointment)
                     .addComponent(respirationRateViewAppointment))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(HeightViewAppointment)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ViewAppointmentAilment)
@@ -849,7 +865,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(DoctorHomeBack1)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         RightComponent.add(PatientEncounterHistory, "card6");
@@ -1017,7 +1033,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(diagnosisVitalSignsRecording1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(DoctorHomeBack)
                     .addComponent(AddVitalSignsToEncounter)
@@ -1035,7 +1051,7 @@ public class hospitalManagement extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Patient ID", "Patient Name", "Patient Gender", "Patient Mail ID", "Patietn Contact Number"
+                "Patient ID", "Patient Name", "Patient Gender", "Patient Mail ID", "Patietn Contact Number", "Account Status"
             }
         ));
         jScrollPane7.setViewportView(patientListForSysAdmin);
@@ -1045,12 +1061,22 @@ public class hospitalManagement extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Doctor ID", "Doctor Name", "Doctor Mail ID", "Doctor Contact Number"
+                "Doctor ID", "Doctor Name", "Doctor Mail ID", "Doctor Contact Number", "Account Status"
             }
         ));
+        doctorListForSysAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                doctorListForSysAdminMouseClicked(evt);
+            }
+        });
         jScrollPane8.setViewportView(doctorListForSysAdmin);
 
         accountDisable.setText("Disable Doctor Account");
+        accountDisable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accountDisableActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout SystemAdminHomeLayout = new javax.swing.GroupLayout(SystemAdminHome);
         SystemAdminHome.setLayout(SystemAdminHomeLayout);
@@ -1306,7 +1332,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         sysAdminPatList.setRowCount(0);
         for (Patient pat: dir.getDir()){
           
-            String saPat[] = {pat.getUniqueID(), pat.getUsername(), pat.getGender(), pat.getMail(), String.valueOf(pat.getPhone())};
+            String saPat[] = {pat.getUniqueID(), pat.getUsername(), pat.getGender(), pat.getMail(), String.valueOf(pat.getPhone()), pat.getAccountStatus()};
             sysAdminPatList.addRow(saPat);
         }
     }
@@ -1315,7 +1341,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         DefaultTableModel sysAdminDocList = (DefaultTableModel)doctorListForSysAdmin.getModel();
         sysAdminDocList.setRowCount(0);
         for (DoctorPerson dp:docDir.getDoctorDir()){
-            String saDoc[] = {dp.getMdeicalLicenseNumber(), dp.getUsername(), dp.getMail(), String.valueOf(dp.getPhone())};
+            String saDoc[] = {dp.getMdeicalLicenseNumber(), dp.getUsername(), dp.getMail(), String.valueOf(dp.getPhone()), dp.getAccountStatus()};
             sysAdminDocList.addRow(saDoc);
         }
     }
@@ -1464,6 +1490,25 @@ public class hospitalManagement extends javax.swing.JFrame {
         encToWorkWith.setRespirationRate(Integer.parseInt(respirationRateFieldVitalSignsRecording.getText()));
         encToWorkWith.setDiagnosis(jTextArea3.getText());
     }//GEN-LAST:event_AddVitalSignsToEncounterActionPerformed
+
+    private void doctorListForSysAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_doctorListForSysAdminMouseClicked
+
+    }//GEN-LAST:event_doctorListForSysAdminMouseClicked
+
+    private void accountDisableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accountDisableActionPerformed
+        int row = doctorListForSysAdmin.getSelectedRow();
+        DoctorPerson dpToDisable = new DoctorPerson();
+        if (row != -1){
+            String ID = doctorListForSysAdmin.getValueAt(row, 0).toString();
+            for (DoctorPerson doc : docDir.getDoctorDir()){
+                if (doc.getMdeicalLicenseNumber().toString().equals(ID)){
+                    dpToDisable = doc;               
+                }              
+            }
+        }dpToDisable.setAccountStatus("Disable");
+        JOptionPane.showMessageDialog(this, "The doctor account has been disabled.");
+        sysAdminDocList();
+    }//GEN-LAST:event_accountDisableActionPerformed
     
     public Patient ValidationPerson(){
         Patient specificP = new Patient();
@@ -1479,8 +1524,12 @@ public class hospitalManagement extends javax.swing.JFrame {
         DoctorPerson doc = new DoctorPerson();
         for (DoctorPerson dr: docDir.getDoctorDir()){
             if (dr.getUsername().equals(usernameTextField.getText()) && dr.getPassword().equals(String.valueOf(passwordTextField.getPassword()))){
-                System.out.println(dr.getUsername()+ dr.getRole()+ dr.getMdeicalLicenseNumber());
+                if (dr.getAccountStatus().toString().equals("Active")){
+                System.out.println(dr.getUsername()+ dr.getRole()+ dr.getAccountStatus());
                 doc = dr;
+                }else{
+                  JOptionPane.showMessageDialog(this, "Sorry but your account has been disabled. Please contact the System Admin for corrections.");
+                }
             }
             
     }return doc;
