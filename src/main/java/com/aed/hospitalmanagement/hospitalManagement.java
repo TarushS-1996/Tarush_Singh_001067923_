@@ -204,6 +204,12 @@ public class hospitalManagement extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         doctorListForSysAdmin = new javax.swing.JTable();
         accountDisable = new javax.swing.JButton();
+        accountDisablePat = new javax.swing.JButton();
+        addPatientSysAdmin = new javax.swing.JButton();
+        addDcotroSysAdmin = new javax.swing.JButton();
+        accountEnablePat = new javax.swing.JButton();
+        accountEnable = new javax.swing.JButton();
+        RegisterViaSysAdmin = new javax.swing.JPanel();
         Grievences = new javax.swing.JPanel();
         MailIDGrievencesLabel = new javax.swing.JLabel();
         mailIDGrievences = new javax.swing.JTextField();
@@ -451,13 +457,10 @@ public class hospitalManagement extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(leftAccID)
                     .addComponent(leftWelcome))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(88, Short.MAX_VALUE)
-                .addComponent(jButton5)
-                .addGap(35, 35, 35))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -466,9 +469,9 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addComponent(leftWelcome)
                 .addGap(28, 28, 28)
                 .addComponent(leftAccID)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 320, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
                 .addComponent(jButton5)
-                .addGap(38, 38, 38))
+                .addGap(43, 43, 43))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -504,7 +507,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                     .addGroup(PatientHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(viewAppoitnmentPatient, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(createAppointment, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
         PatientHomeLayout.setVerticalGroup(
             PatientHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -515,7 +518,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addComponent(createAppointment)
                 .addGap(26, 26, 26)
                 .addComponent(viewAppoitnmentPatient)
-                .addContainerGap(442, Short.MAX_VALUE))
+                .addContainerGap(439, Short.MAX_VALUE))
         );
 
         RightComponent.add(PatientHome, "card2");
@@ -557,7 +560,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         CreatePatientAppointment.setLayout(CreatePatientAppointmentLayout);
         CreatePatientAppointmentLayout.setHorizontalGroup(
             CreatePatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
             .addGroup(CreatePatientAppointmentLayout.createSequentialGroup()
                 .addGroup(CreatePatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CreatePatientAppointmentLayout.createSequentialGroup()
@@ -673,7 +676,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         ViewPatientAppointment.setLayout(ViewPatientAppointmentLayout);
         ViewPatientAppointmentLayout.setHorizontalGroup(
             ViewPatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
+            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
             .addGroup(ViewPatientAppointmentLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ViewPatientAppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -773,7 +776,7 @@ public class hospitalManagement extends javax.swing.JFrame {
             DoctorHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DoctorHomeLayout.createSequentialGroup()
                 .addGroup(DoctorHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
                     .addGroup(DoctorHomeLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(DoctorHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -839,7 +842,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addGroup(PatientEncounterHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PatientEncounterHistoryLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 728, Short.MAX_VALUE))
                     .addGroup(PatientEncounterHistoryLayout.createSequentialGroup()
                         .addGroup(PatientEncounterHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PatientEncounterHistoryLayout.createSequentialGroup()
@@ -865,7 +868,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(DoctorHomeBack1)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         RightComponent.add(PatientEncounterHistory, "card6");
@@ -1033,7 +1036,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(diagnosisVitalSignsRecording1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(DoctorHomeBack)
                     .addComponent(AddVitalSignsToEncounter)
@@ -1078,6 +1081,41 @@ public class hospitalManagement extends javax.swing.JFrame {
             }
         });
 
+        accountDisablePat.setText("Disable Patient Account");
+        accountDisablePat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accountDisablePatActionPerformed(evt);
+            }
+        });
+
+        addPatientSysAdmin.setText("Add Patient");
+        addPatientSysAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPatientSysAdminActionPerformed(evt);
+            }
+        });
+
+        addDcotroSysAdmin.setText("Add Doctor");
+        addDcotroSysAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addDcotroSysAdminActionPerformed(evt);
+            }
+        });
+
+        accountEnablePat.setText("Enable Patient Account");
+        accountEnablePat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accountEnablePatActionPerformed(evt);
+            }
+        });
+
+        accountEnable.setText("Enable Doctor Account");
+        accountEnable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accountEnableActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout SystemAdminHomeLayout = new javax.swing.GroupLayout(SystemAdminHome);
         SystemAdminHome.setLayout(SystemAdminHomeLayout);
         SystemAdminHomeLayout.setHorizontalGroup(
@@ -1088,29 +1126,63 @@ public class hospitalManagement extends javax.swing.JFrame {
                         .addGap(221, 221, 221)
                         .addComponent(SystemAdminHomeTitle))
                     .addGroup(SystemAdminHomeLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addGap(106, 106, 106)
                         .addGroup(SystemAdminHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(accountDisable)
+                            .addGroup(SystemAdminHomeLayout.createSequentialGroup()
+                                .addComponent(accountEnable)
+                                .addGap(18, 18, 18)
+                                .addComponent(accountDisable))
                             .addGroup(SystemAdminHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(30, Short.MAX_VALUE))
+                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SystemAdminHomeLayout.createSequentialGroup()
+                                .addComponent(accountEnablePat)
+                                .addGap(18, 18, 18)
+                                .addComponent(accountDisablePat))
+                            .addGroup(SystemAdminHomeLayout.createSequentialGroup()
+                                .addComponent(addDcotroSysAdmin)
+                                .addGap(18, 18, 18)
+                                .addComponent(addPatientSysAdmin)))))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         SystemAdminHomeLayout.setVerticalGroup(
             SystemAdminHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SystemAdminHomeLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(32, 32, 32)
                 .addComponent(SystemAdminHomeTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addGap(18, 18, 18)
+                .addGroup(SystemAdminHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addPatientSysAdmin)
+                    .addComponent(addDcotroSysAdmin))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
+                .addGap(18, 18, 18)
+                .addGroup(SystemAdminHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(accountDisablePat)
+                    .addComponent(accountEnablePat))
+                .addGap(44, 44, 44)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(accountDisable)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGroup(SystemAdminHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(accountDisable)
+                    .addComponent(accountEnable))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         RightComponent.add(SystemAdminHome, "card8");
+
+        javax.swing.GroupLayout RegisterViaSysAdminLayout = new javax.swing.GroupLayout(RegisterViaSysAdmin);
+        RegisterViaSysAdmin.setLayout(RegisterViaSysAdminLayout);
+        RegisterViaSysAdminLayout.setHorizontalGroup(
+            RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 740, Short.MAX_VALUE)
+        );
+        RegisterViaSysAdminLayout.setVerticalGroup(
+            RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 581, Short.MAX_VALUE)
+        );
+
+        RightComponent.add(RegisterViaSysAdmin, "card9");
 
         jSplitPane1.setRightComponent(RightComponent);
 
@@ -1118,7 +1190,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         Workspace.setLayout(WorkspaceLayout);
         WorkspaceLayout.setHorizontalGroup(
             WorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         WorkspaceLayout.setVerticalGroup(
             WorkspaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1508,7 +1580,63 @@ public class hospitalManagement extends javax.swing.JFrame {
         }dpToDisable.setAccountStatus("Disable");
         JOptionPane.showMessageDialog(this, "The doctor account has been disabled.");
         sysAdminDocList();
+        PatientAppointmentDrList.removeItem(dpToDisable.getUsername());
     }//GEN-LAST:event_accountDisableActionPerformed
+
+    private void accountDisablePatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accountDisablePatActionPerformed
+        int row = patientListForSysAdmin.getSelectedRow();
+        Patient patToDisable = new Patient();
+        if(row != -1){
+            String IDPat = patientListForSysAdmin.getValueAt(row, 0).toString();
+            for (Patient pat:dir.getDir()){
+                if (pat.getUniqueID().toString().equals(IDPat)){
+                    patToDisable = pat;                
+                }
+            }
+        }patToDisable.setAccountStatus("Disable");
+        JOptionPane.showMessageDialog(this, "The patient account has been disabled.");
+        
+    }//GEN-LAST:event_accountDisablePatActionPerformed
+
+    private void addPatientSysAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPatientSysAdminActionPerformed
+        SplitPanelPaint(Register);
+        //I need a new registration page which is unique to sys admin only.
+    }//GEN-LAST:event_addPatientSysAdminActionPerformed
+
+    private void addDcotroSysAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDcotroSysAdminActionPerformed
+        SplitPanelPaint(Register);
+    }//GEN-LAST:event_addDcotroSysAdminActionPerformed
+
+    private void accountEnablePatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accountEnablePatActionPerformed
+        int row = patientListForSysAdmin.getSelectedRow();
+        Patient patToDisable = new Patient();
+        if(row != -1){
+            String IDPat = patientListForSysAdmin.getValueAt(row, 0).toString();
+            for (Patient pat:dir.getDir()){
+                if (pat.getUniqueID().toString().equals(IDPat)){
+                    patToDisable = pat;                
+                }
+            }
+        }patToDisable.setAccountStatus("Active");
+        JOptionPane.showMessageDialog(this, "The patient account has been disabled.");
+        
+    }//GEN-LAST:event_accountEnablePatActionPerformed
+
+    private void accountEnableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accountEnableActionPerformed
+        int row = doctorListForSysAdmin.getSelectedRow();
+        DoctorPerson dpToDisable = new DoctorPerson();
+        if (row != -1){
+            String ID = doctorListForSysAdmin.getValueAt(row, 0).toString();
+            for (DoctorPerson doc : docDir.getDoctorDir()){
+                if (doc.getMdeicalLicenseNumber().toString().equals(ID)){
+                    dpToDisable = doc;               
+                }              
+            }
+        }dpToDisable.setAccountStatus("Disable");
+        JOptionPane.showMessageDialog(this, "The doctor account has been disabled.");
+        sysAdminDocList();
+        PatientAppointmentDrList.addItem(dpToDisable.getUsername());
+    }//GEN-LAST:event_accountEnableActionPerformed
     
     public Patient ValidationPerson(){
         Patient specificP = new Patient();
@@ -1616,6 +1744,7 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JTable PatientEncounterHistoryDoctor;
     private javax.swing.JPanel PatientHome;
     private javax.swing.JPanel Register;
+    private javax.swing.JPanel RegisterViaSysAdmin;
     private javax.swing.JPanel RightComponent;
     private javax.swing.JButton SubmitGrievences;
     private javax.swing.JPanel SystemAdminHome;
@@ -1629,6 +1758,11 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JPanel VitalSignsPage;
     private javax.swing.JPanel Workspace;
     private javax.swing.JButton accountDisable;
+    private javax.swing.JButton accountDisablePat;
+    private javax.swing.JButton accountEnable;
+    private javax.swing.JButton accountEnablePat;
+    private javax.swing.JButton addDcotroSysAdmin;
+    private javax.swing.JButton addPatientSysAdmin;
     private javax.swing.JLabel ailmentVitalSignsRecording2;
     private javax.swing.JTextField bloodGroupFieldVitalSignsRecording;
     private javax.swing.JLabel bloodGroupIDVitalSignsRecording;
