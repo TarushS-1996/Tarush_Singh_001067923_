@@ -12,6 +12,24 @@ import java.util.Date;
  */
 public class Person {
     private String name;
+    private String userAddress;
+    private int zipCode;
+
+    public String getUserAddress() {
+        return userAddress;
+    }
+
+    public void setUserAddress(String userAddress) {
+        this.userAddress = userAddress;
+    }
+
+    public int getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
+    }
 
     public String getName() {
         return name;

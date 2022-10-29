@@ -12,6 +12,15 @@ public class Hospital {
     private String hospitalName;
     private int hospitalZipCode;
     private String hospitalAddress;
+    private int hospitalNumber;
+
+    public int getHospitalNumber() {
+        return hospitalNumber;
+    }
+
+    public void setHospitalNumber(int hospitalNumber) {
+        this.hospitalNumber = hospitalNumber;
+    }
 
     public String getHospitalName() {
         return hospitalName;
