@@ -643,7 +643,7 @@ public class hospitalManagement extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Encounter ID", "Appointment with", "Appointment date", "Ailment"
+                "Encounter ID", "Dr. Information", "Appointment date", "Ailment"
             }
         ) {
             boolean[] canEdit = new boolean [] {
