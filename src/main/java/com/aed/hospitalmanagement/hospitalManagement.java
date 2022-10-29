@@ -1490,7 +1490,7 @@ public class hospitalManagement extends javax.swing.JFrame {
             doc.setGender(genderString);
             doc.setMdeicalLicenseNumber(medicalLicenseNumberTextField.getText());
             System.out.println(docDir.getDoctorDir().size());
-            PatientAppointmentDrList.addItem(doc.getUsername());
+            PatientAppointmentDrList.addItem(doc.getUsername() +" " +"(" + doc.getPhone() + ", " + doc.getMail() + ")");
             sysAdminDocList();
             
         }else if(rolesComboBox.getSelectedItem().toString().equals("Patient")){
