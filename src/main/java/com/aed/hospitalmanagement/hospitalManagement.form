@@ -481,7 +481,7 @@
                               <Component id="leftWelcome" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               <Component id="leftAccID" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="341" max="32767" attributes="0"/>
+                              <EmptySpace pref="309" max="32767" attributes="0"/>
                               <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                           </Group>
@@ -561,7 +561,7 @@
                                   <Component id="createAppointment" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Component id="viewAppoitnmentPatient" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="471" max="32767" attributes="0"/>
+                                  <EmptySpace pref="439" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -777,15 +777,19 @@
                                           <Component id="BackToPatientHome" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Group type="102" attributes="0">
                                                   <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
                                                   <Component id="jLabel3" min="-2" pref="164" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="ViewAppointmentUsername" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
-                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="ViewAppointmentDate" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="ViewAppointmentWith" alignment="0" pref="251" max="32767" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="ViewAppointmentDate" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="ViewAppointmentWith" alignment="0" pref="251" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="ContactInforAppointment" max="32767" attributes="0"/>
                                               </Group>
                                               <Component id="ViewAppointmentAilment" alignment="0" min="-2" pref="381" max="-2" attributes="0"/>
                                               <Component id="DiagnosisViewAppointment" alignment="0" min="-2" pref="381" max="-2" attributes="0"/>
@@ -817,7 +821,10 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="ViewAppointmentUsername" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ViewAppointmentWith" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="ViewAppointmentWith" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ContactInforAppointment" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="ViewAppointmentDate" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -827,7 +834,7 @@
                                       <Component id="temperatureViewAppointment" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="respirationRateViewAppointment" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                                  <EmptySpace pref="15" max="32767" attributes="0"/>
                                   <Component id="HeightViewAppointment" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="ViewAppointmentAilment" min="-2" max="-2" attributes="0"/>
@@ -962,6 +969,11 @@
                             <Property name="text" type="java.lang.String" value="Height:"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JLabel" name="ContactInforAppointment">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Contact Info:"/>
+                          </Properties>
+                        </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="DoctorHome">
@@ -1007,7 +1019,7 @@
                                   <Component id="jLabel4" min="-2" pref="44" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                   <Component id="jLabel5" min="-2" pref="27" max="-2" attributes="0"/>
-                                  <EmptySpace pref="65" max="32767" attributes="0"/>
+                                  <EmptySpace pref="33" max="32767" attributes="0"/>
                                   <Component id="jScrollPane3" min="-2" pref="360" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="AddVitalSigns" min="-2" max="-2" attributes="0"/>
@@ -1247,7 +1259,7 @@
                                       <Component id="jScrollPane5" min="-2" pref="122" max="-2" attributes="0"/>
                                       <Component id="diagnosisVitalSignsRecording1" min="-2" pref="24" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="75" max="32767" attributes="0"/>
+                                  <EmptySpace pref="43" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="DoctorHomeBack" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="AddVitalSignsToEncounter" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1460,7 +1472,7 @@
                                       <Component id="accountDisable" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="accountEnable" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="80" max="32767" attributes="0"/>
+                                  <EmptySpace pref="48" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1648,56 +1660,77 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="dobSysAdmin" max="32767" attributes="0"/>
-                                      <Component id="mlnSysAdmin" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="genderSysAdmin" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="roleSysAdmin" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="phoneSysAdmin" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="mailIDSysAdmin" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="passwordSysAdmin" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="userNameSysAdmin" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="registerSysAdmin" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="cancelSysAdmin" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="unameTextSysAdmin" max="32767" attributes="0"/>
-                                              <Component id="passwordFieldSysAdmin" max="32767" attributes="0"/>
-                                              <Component id="mailTextFieldSysAdmin" max="32767" attributes="0"/>
-                                              <Component id="numberTextFieldSysAdmin" max="32767" attributes="0"/>
-                                              <Component id="comboBoxSysAdmin" pref="164" max="32767" attributes="0"/>
+                                              <Component id="dobSysAdmin" max="32767" attributes="0"/>
+                                              <Component id="mlnSysAdmin" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="genderSysAdmin" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="roleSysAdmin" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="phoneSysAdmin" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="mailIDSysAdmin" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="passwordSysAdmin" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="userNameSysAdmin" alignment="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="mlnTextFieldSysAdmin" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="dateChooserSysAdmin" alignment="0" max="32767" attributes="0"/>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="registerSysAdmin" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="cancelSysAdmin" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="unameTextSysAdmin" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="passwordFieldSysAdmin" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="mailTextFieldSysAdmin" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="numberTextFieldSysAdmin" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="comboBoxSysAdmin" alignment="0" pref="164" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="mlnTextFieldSysAdmin" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="dateChooserSysAdmin" alignment="0" pref="165" max="32767" attributes="0"/>
-                                          </Group>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                          <Component id="firstNameTextFieldSysAdmin" min="-2" pref="146" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="lastNameTextFieldSysAdmin" min="-2" pref="138" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="262" max="32767" attributes="0"/>
+                                  <EmptySpace pref="165" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                                  <EmptySpace pref="129" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lastNameTextFieldSysAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="firstNameTextFieldSysAdmin" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="userNameSysAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="unameTextSysAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1739,12 +1772,12 @@
                                       <Component id="mlnSysAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="mlnTextFieldSysAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="153" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="cancelSysAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="registerSysAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1863,6 +1896,26 @@
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registerSysAdminActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel6">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="First Name:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="lastNameTextFieldSysAdmin">
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel8">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Last Name:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="firstNameTextFieldSysAdmin">
+                          <Properties>
+                            <Property name="toolTipText" type="java.lang.String" value=""/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="firstNameTextFieldSysAdminActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
