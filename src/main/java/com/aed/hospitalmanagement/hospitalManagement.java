@@ -54,6 +54,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         
         initComponents();
         medicalLicenseNumberTextField.setEnabled(false);
+        mlnTextFieldSysAdmin.setEnabled(false);
         userName.setEnabled(false);
         encounterID.setEnabled(false);
         patientAgeFieldVitalSignsRecording.setEnabled(false);
@@ -1154,6 +1155,11 @@ public class hospitalManagement extends javax.swing.JFrame {
         mlnSysAdmin.setText("Medical license No.:");
 
         comboBoxSysAdmin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Patient", "Doctor" }));
+        comboBoxSysAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxSysAdminActionPerformed(evt);
+            }
+        });
 
         genderButtonGroup.add(jRadioButton1);
         jRadioButton1.setText("Male");
@@ -1409,13 +1415,17 @@ public class hospitalManagement extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rolesComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rolesComboBoxActionPerformed
-        if (rolesComboBox.getSelectedIndex() == 1){
+        disableFields();
+    }//GEN-LAST:event_rolesComboBoxActionPerformed
+    
+    public void disableFields(){
+    if (rolesComboBox.getSelectedIndex() == 1){
             medicalLicenseNumberTextField.setEnabled(true);
         }else{
             medicalLicenseNumberTextField.setEnabled(false);
         }
-    }//GEN-LAST:event_rolesComboBoxActionPerformed
-
+    }
+    
     public String encIDGen(){
         Random ran = new Random();
         int idInt = ran.nextInt(100);
@@ -1867,6 +1877,14 @@ public class hospitalManagement extends javax.swing.JFrame {
     private void firtsNameTextFieldRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firtsNameTextFieldRegisterActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_firtsNameTextFieldRegisterActionPerformed
+
+    private void comboBoxSysAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxSysAdminActionPerformed
+        if (comboBoxSysAdmin.getSelectedIndex() == 1){
+            mlnTextFieldSysAdmin.setEnabled(true);
+        }else{
+            mlnTextFieldSysAdmin.setEnabled(false);
+        }
+    }//GEN-LAST:event_comboBoxSysAdminActionPerformed
     
     public Patient ValidationPerson(){
         Patient specificP = new Patient();
