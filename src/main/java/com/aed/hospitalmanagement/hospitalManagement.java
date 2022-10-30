@@ -1683,6 +1683,7 @@ public class hospitalManagement extends javax.swing.JFrame {
             doc.setMdeicalLicenseNumber(mlnTextFieldSysAdmin.getText());
             System.out.println(docDir.getDoctorDir().size());
             doc.setUserAddress(userAddress.getText());
+            doc.setHospitalName(jComboBox1.getSelectedItem().toString());
             doc.setZipCode(Integer.parseInt(zipCode.getText()));
             doc.setUserAddress(name);
             //PatientAppointmentDrList.addItem(doc.getUsername() +" " +"(" + doc.getPhone() + ", " + doc.getMail() + ")");
