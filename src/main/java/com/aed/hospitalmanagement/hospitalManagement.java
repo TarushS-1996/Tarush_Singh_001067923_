@@ -243,6 +243,13 @@ public class hospitalManagement extends javax.swing.JFrame {
         lastNameTextFieldSysAdmin = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         firstNameTextFieldSysAdmin = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTextArea6 = new javax.swing.JTextArea();
+        jLabel21 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
         Grievences = new javax.swing.JPanel();
         MailIDGrievencesLabel = new javax.swing.JLabel();
         mailIDGrievences = new javax.swing.JTextField();
@@ -1268,59 +1275,96 @@ public class hospitalManagement extends javax.swing.JFrame {
             }
         });
 
+        jLabel20.setText("Address:");
+
+        jTextArea6.setColumns(20);
+        jTextArea6.setRows(5);
+        jScrollPane10.setViewportView(jTextArea6);
+
+        jLabel21.setText("Hospital:");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None" }));
+
+        jLabel22.setText("Zip code:");
+
         javax.swing.GroupLayout RegisterViaSysAdminLayout = new javax.swing.GroupLayout(RegisterViaSysAdmin);
         RegisterViaSysAdmin.setLayout(RegisterViaSysAdminLayout);
         RegisterViaSysAdminLayout.setHorizontalGroup(
             RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegisterViaSysAdminLayout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(61, 61, 61)
                 .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegisterViaSysAdminLayout.createSequentialGroup()
                         .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(dobSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(mlnSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(genderSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(roleSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(phoneSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(mailIDSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(passwordSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(userNameSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
+                            .addComponent(userNameSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(16, 16, 16)
                         .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(RegisterViaSysAdminLayout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton3))
-                            .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(mlnTextFieldSysAdmin, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(dateChooserSysAdmin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(RegisterViaSysAdminLayout.createSequentialGroup()
-                                    .addComponent(registerSysAdmin)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cancelSysAdmin)))
-                            .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(unameTextSysAdmin, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(passwordFieldSysAdmin, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(mailTextFieldSysAdmin, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(numberTextFieldSysAdmin, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(comboBoxSysAdmin, javax.swing.GroupLayout.Alignment.LEADING, 0, 164, Short.MAX_VALUE))))
+                                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(unameTextSysAdmin)
+                                    .addComponent(firstNameTextFieldSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                                    .addComponent(mailTextFieldSysAdmin))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(phoneSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(passwordSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lastNameTextFieldSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                                    .addComponent(passwordFieldSysAdmin)
+                                    .addComponent(numberTextFieldSysAdmin)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegisterViaSysAdminLayout.createSequentialGroup()
+                                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(dateChooserSysAdmin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(comboBoxSysAdmin, javax.swing.GroupLayout.Alignment.LEADING, 0, 164, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(genderSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                                    .addGroup(RegisterViaSysAdminLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jLabel21)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(RegisterViaSysAdminLayout.createSequentialGroup()
+                                        .addComponent(jRadioButton1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jRadioButton2))
+                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton3)
+                                .addGap(77, 77, 77))))
                     .addGroup(RegisterViaSysAdminLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(firstNameTextFieldSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
-                        .addComponent(lastNameTextFieldSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(164, Short.MAX_VALUE))
+                        .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(roleSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dobSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(RegisterViaSysAdminLayout.createSequentialGroup()
+                                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, RegisterViaSysAdminLayout.createSequentialGroup()
+                                        .addComponent(mlnSysAdmin)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(mlnTextFieldSysAdmin))
+                                    .addComponent(registerSysAdmin)
+                                    .addGroup(RegisterViaSysAdminLayout.createSequentialGroup()
+                                        .addComponent(jLabel20)
+                                        .addGap(38, 38, 38)
+                                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(RegisterViaSysAdminLayout.createSequentialGroup()
+                                        .addComponent(jLabel22)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cancelSysAdmin))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(27, 27, 27))
         );
         RegisterViaSysAdminLayout.setVerticalGroup(
             RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegisterViaSysAdminLayout.createSequentialGroup()
-                .addContainerGap(129, Short.MAX_VALUE)
+                .addContainerGap(70, Short.MAX_VALUE)
                 .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1328,45 +1372,54 @@ public class hospitalManagement extends javax.swing.JFrame {
                         .addComponent(lastNameTextFieldSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(firstNameTextFieldSysAdmin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(RegisterViaSysAdminLayout.createSequentialGroup()
-                        .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(userNameSysAdmin)
-                            .addComponent(unameTextSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(passwordSysAdmin)
-                            .addComponent(passwordFieldSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(mailIDSysAdmin)
-                            .addComponent(mailTextFieldSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(phoneSysAdmin)
-                            .addComponent(numberTextFieldSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(roleSysAdmin)
-                            .addComponent(comboBoxSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(genderSysAdmin)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton3))
-                        .addGap(18, 18, 18)
-                        .addComponent(dobSysAdmin))
-                    .addComponent(dateChooserSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(userNameSysAdmin)
+                        .addComponent(unameTextSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(passwordSysAdmin)
+                        .addComponent(passwordFieldSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(mailTextFieldSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(phoneSysAdmin)
+                        .addComponent(numberTextFieldSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mailIDSysAdmin))
+                .addGap(18, 18, 18)
+                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(roleSysAdmin)
+                    .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(comboBoxSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(genderSysAdmin)
+                        .addComponent(jRadioButton1)
+                        .addComponent(jRadioButton2)
+                        .addComponent(jRadioButton3)))
+                .addGap(21, 21, 21)
+                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dobSysAdmin)
+                    .addComponent(dateChooserSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel21)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(mlnSysAdmin)
                     .addComponent(mlnTextFieldSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
-                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cancelSysAdmin)
-                    .addComponent(registerSysAdmin))
-                .addGap(19, 19, 19))
+                .addGap(18, 18, 18)
+                .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegisterViaSysAdminLayout.createSequentialGroup()
+                        .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(65, 65, 65)
+                        .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(registerSysAdmin)
+                            .addComponent(cancelSysAdmin)))
+                    .addGroup(RegisterViaSysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel22)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(71, 71, 71))
         );
 
         RightComponent.add(RegisterViaSysAdmin, "card9");
@@ -1629,7 +1682,10 @@ public class hospitalManagement extends javax.swing.JFrame {
             doc.setGender(genderString);
             doc.setMdeicalLicenseNumber(mlnTextFieldSysAdmin.getText());
             System.out.println(docDir.getDoctorDir().size());
-            PatientAppointmentDrList.addItem(doc.getUsername() +" " +"(" + doc.getPhone() + ", " + doc.getMail() + ")");
+            doc.setUserAddress(userAddress.getText());
+            doc.setZipCode(Integer.parseInt(zipCode.getText()));
+            doc.setUserAddress(name);
+            //PatientAppointmentDrList.addItem(doc.getUsername() +" " +"(" + doc.getPhone() + ", " + doc.getMail() + ")");
             sysAdminDocList();
             
         }else if(comboBoxSysAdmin.getSelectedItem().toString().equals("Patient")){
@@ -1644,11 +1700,20 @@ public class hospitalManagement extends javax.swing.JFrame {
             person.setPhone(Integer.parseInt(numberTextFieldSysAdmin.getText()));
             person.setGender(genderString);
             person.setUniqueID(patIDGen());
+            person.setUserAddress(userAddress.getText());
+            person.setZipCode(Integer.parseInt(zipCode.getText()));
             sysAdminPatientList();
         }
         
     }
     
+    public void addDoctorsAsPerHospital(String hospitalName){
+        for (DoctorPerson doctoAdd: docDir.getDoctorDir()){
+        if (doctoAdd.getHospitalName().toString().equals(hospitalName)){
+            PatientAppointmentDrList.addItem(doctoAdd.getUsername());
+        }
+        }
+    }
     
     public void registerationProcess(){
     if (rolesComboBox.getSelectedItem().toString().equals("Doctor")){
@@ -1663,8 +1728,11 @@ public class hospitalManagement extends javax.swing.JFrame {
             doc.setPhone(Integer.parseInt(phoneTextField.getText()));
             doc.setGender(genderString);
             doc.setMdeicalLicenseNumber(medicalLicenseNumberTextField.getText());
+            doc.setUserAddress(userAddress.getText());
+            doc.setZipCode(Integer.parseInt(zipCode.getText()));
+            doc.setHospitalName(jComboBox1.getSelectedItem().toString());
             System.out.println(docDir.getDoctorDir().size());
-            PatientAppointmentDrList.addItem(doc.getUsername() +" " +"(" + doc.getPhone() + ", " + doc.getMail() + ")");
+            //PatientAppointmentDrList.addItem(doc.getUsername() +" " +"(" + doc.getPhone() + ", " + doc.getMail() + ")");
             sysAdminDocList();
             
         }else if(rolesComboBox.getSelectedItem().toString().equals("Patient")){
@@ -1679,6 +1747,9 @@ public class hospitalManagement extends javax.swing.JFrame {
             person.setPhone(Integer.parseInt(phoneTextField.getText()));
             person.setGender(genderString);
             person.setUniqueID(patIDGen());
+            person.setUserAddress(userAddress.getText());
+            person.setHospitalName(jComboBox1.getSelectedItem().toString());
+            person.setZipCode(Integer.parseInt(zipCode.getText()));
             sysAdminPatientList();
             
         }else if(rolesComboBox.getSelectedItem().toString().equals("System Administration")){
@@ -1692,6 +1763,9 @@ public class hospitalManagement extends javax.swing.JFrame {
             admin.setDateOfBirth(jDateChooser1.getDate());
             admin.setGender(genderString);
             admin.setPhone(Integer.parseInt(phoneTextField.getText()));
+            admin.setUserAddress(userAddress.getText());
+            admin.setZipCode(Integer.parseInt(zipCode.getText()));
+            admin.setHospitalName(jComboBox1.getSelectedItem().toString());
             admin.setAdminID(patIDGen());            
         }
     }
@@ -1733,6 +1807,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 leftAccID.setText("Acc. ID: "+data.getUniqueID());
                 PanelPaint(Workspace);
                 SplitPanelPaint(PatientHome);
+                addDoctorsAsPerHospital(data.getHospitalName());
                 
             }else if(dataDoc.getRole() == "Doctor"){
                 leftWelcome.setText("Welcome: "+ dataDoc.getUsername());
@@ -1800,6 +1875,7 @@ public class hospitalManagement extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         PanelPaint(Login);
+        PatientAppointmentDrList.removeAllItems();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void CancelGrievencesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelGrievencesActionPerformed
@@ -2048,6 +2124,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         hosp.setHospitalZipCode(Integer.parseInt(jTextField2.getText()));
         hosp.setHospitalNumber(Integer.parseInt(jTextField3.getText()));
         jComboBox1.addItem(jTextField1.getText());
+        jComboBox2.addItem(jTextField1.getText());
         PanelPaint(Login);
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -2062,6 +2139,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 if (p.getAccountStatus().toString().equals("Active")){
                 System.out.println(p.getUsername());
                 specificP = p;
+                        
                 }else{
                     JOptionPane.showMessageDialog(this, "Sorry but your account has been disabled. Please contact the System Admin for corrections.");
                 }
@@ -2218,6 +2296,7 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2231,6 +2310,9 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -2243,6 +2325,7 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2259,9 +2342,11 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JTextArea jTextArea6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField lastNameTextFieldRegister;
     private javax.swing.JTextField lastNameTextFieldSysAdmin;

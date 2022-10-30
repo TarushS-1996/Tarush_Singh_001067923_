@@ -10,7 +10,7 @@ import java.util.Date;
  *
  * @author tarush
  */
-public class Person {
+public class Person extends Hospital{
     private String name;
     private String userAddress;
     private int zipCode;
