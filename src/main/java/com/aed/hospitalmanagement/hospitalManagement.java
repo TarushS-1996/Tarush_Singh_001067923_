@@ -4,6 +4,7 @@
  */
 package com.aed.hospitalmanagement;
 
+import com.aed.backend.CalcAge;
 import com.aed.backend.PatientDirectory;
 import com.aed.backend.DoctorDirectory;
 import com.aed.backend.DoctorPerson;
@@ -17,6 +18,7 @@ import com.aed.backend.Patient;
 import com.aed.backend.Person;
 import com.aed.backend.SystemAdmin;
 import com.aed.backend.SystemAdminDirectory;
+import java.util.Date;
 import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -59,6 +61,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         
         
         initComponents();
+        addData();
         PanelPaint(Login);
         medicalLicenseNumberTextField.setEnabled(false);
         mlnTextFieldSysAdmin.setEnabled(false);
@@ -467,7 +470,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         Register.add(othersButton);
         othersButton.setBounds(520, 270, 68, 22);
 
-        jDateChooser1.setDateFormatString("dd-MM-yyyy");
+        jDateChooser1.setDateFormatString("dd/MM/yyyy");
         Register.add(jDateChooser1);
         jDateChooser1.setBounds(360, 310, 168, 24);
 
@@ -1879,6 +1882,83 @@ public class hospitalManagement extends javax.swing.JFrame {
         }
     }
     
+    public  void addData(){
+            Date date = new Date();
+            jDateChooser1.setDate(date);
+            Hospital hosp = hospDir.addNewHospital();
+            hosp.setHospitalName("St Thomas");
+            hosp.setHospitalAddress("99 Calumet STreet");
+            hosp.setHospitalZipCode(Integer.parseInt("02120"));
+            hosp.setHospitalNumber(Integer.parseInt("1234567890"));
+            jComboBox1.addItem(jTextField1.getText());
+            jComboBox2.addItem(jTextField1.getText());
+            PanelPaint(Login);
+            
+            DoctorPerson doc = docDir.addDcotorPerson();
+            //String name =  firtsNameTextFieldRegister.getText()+ " "+lastNameTextFieldRegister.getText();
+            doc.setName("Tarush Singh");
+            doc.setUsername("Tarush");
+            doc.setPassword("1");
+            doc.setMail("tarush.singh29@gmail.com");
+            doc.setRole("Doctor");
+            doc.setDateOfBirth(jDateChooser1.getDate());
+            doc.setPhone(1234567890);
+            doc.setGender("Male");
+            doc.setMdeicalLicenseNumber("MLN-157681");
+            doc.setUserAddress("RL-30 G-BLock");
+            doc.setZipCode(42302);
+            doc.setHospitalName("St Thomas");
+            //System.out.println(docDir.getDoctorDir().size());
+            //PatientAppointmentDrList.addItem(doc.getUsername() +" " +"(" + doc.getPhone() + ", " + doc.getMail() + ")");
+            sysAdminDocList();
+            
+            Patient person = dir.addPerson();
+            //String name =  firtsNameTextFieldRegister.getText()+ " "+lastNameTextFieldRegister.getText();
+            person.setName("Ishani Srivastav");
+            person.setUsername("Ishani");
+            person.setPassword("1");
+            person.setMail("ishaniS@gmail.com");
+            person.setRole("Patient");
+            person.setDateOfBirth(jDateChooser1.getDate());
+            person.setPhone(1234567890);
+            person.setGender("Female");
+            person.setUniqueID(patIDGen());
+            person.setUserAddress("Texas");
+            person.setHospitalName("St Thomas");
+            person.setZipCode(45123);
+            sysAdminPatientList();
+            
+            SystemAdmin admin = sysAdminDir.addSystemAdmin();
+            //String name =  firtsNameTextFieldRegister.getText()+ " "+lastNameTextFieldRegister.getText();
+            admin.setName("Jyeshtha Prabhu");
+            admin.setUsername("Jyeshtha");
+            admin.setPassword("1");
+            admin.setMail("jyeshthaP@gmail.com");
+            admin.setRole("System Administration");
+            admin.setDateOfBirth(jDateChooser1.getDate());
+            admin.setGender("Female");
+            admin.setPhone(1234567890);
+            admin.setUserAddress("013 Mason Ohio");
+            admin.setZipCode(12345);
+            admin.setHospitalName("St Thomas");
+            admin.setAdminID(patIDGen());
+            
+            HospitalAdmin hospAdmins = hospAdminDIr.addHospitalAdmin();
+            //String name =  firtsNameTextFieldRegister.getText()+ " "+lastNameTextFieldRegister.getText();
+            hospAdmins.setName("Chandrani Halder");
+            hospAdmins.setUsername("Chandrani");
+            hospAdmins.setPassword("1");
+            hospAdmins.setMail("chandraniH@gmail.com");
+            hospAdmins.setRole("Hospital Administration");
+            hospAdmins.setDateOfBirth(jDateChooser1.getDate());
+            hospAdmins.setGender("Female");
+            hospAdmins.setPhone(1234567890);
+            hospAdmins.setUserAddress("San Fransisco Bay");
+            hospAdmins.setZipCode(01234);
+            hospAdmins.setHospitalName("St Thomas");
+            hospAdmins.setHospitalAdminID(hospAdminIDGen());
+        }
+    
     private void registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerActionPerformed
         /*if (ValidationDoctor() == null || ValidationPerson() == null || ValidationSysAdmin() == null){
         registerationProcess();
@@ -2032,7 +2112,7 @@ public class hospitalManagement extends javax.swing.JFrame {
 
     private void PatientAppointmentSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientAppointmentSubmitActionPerformed
         SplitPanelPaint(PatientHome);
-        //Here we will add methods to add data to storage.
+        //Here we will add methods to add data to storage
         Encounter enc = encHistory.addEncounterHistory();
         enc.setUsername(ValidationPerson().getUsername());
         enc.setGender(ValidationPerson().getGender());
