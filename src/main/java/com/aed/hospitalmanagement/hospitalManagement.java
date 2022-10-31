@@ -59,12 +59,12 @@ public class hospitalManagement extends javax.swing.JFrame {
         
         
         initComponents();
+        PanelPaint(Login);
         medicalLicenseNumberTextField.setEnabled(false);
         mlnTextFieldSysAdmin.setEnabled(false);
         userName.setEnabled(false);
         encounterID.setEnabled(false);
         patientAgeFieldVitalSignsRecording.setEnabled(false);
-        bloodGroupFieldVitalSignsRecording.setEnabled(false);
         jTextArea4.setEnabled(false);
     }
     
@@ -193,7 +193,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         patientAgeFieldVitalSignsRecording = new javax.swing.JTextField();
         patientAgeVitalSignsRecording = new javax.swing.JLabel();
         bloodGroupIDVitalSignsRecording = new javax.swing.JLabel();
-        bloodGroupFieldVitalSignsRecording = new javax.swing.JTextField();
+        heartRateFieldVitalSignsRecording = new javax.swing.JTextField();
         heightVitalSignsRecording1 = new javax.swing.JLabel();
         bloodPressureIDVitalSignsRecording = new javax.swing.JLabel();
         temperatureVitalSignsRecording3 = new javax.swing.JLabel();
@@ -942,7 +942,8 @@ public class hospitalManagement extends javax.swing.JFrame {
 
         patientAgeVitalSignsRecording.setText("Age:");
 
-        bloodGroupIDVitalSignsRecording.setText("Blood group:");
+        bloodGroupIDVitalSignsRecording.setText("Heart Rate:");
+        bloodGroupIDVitalSignsRecording.setToolTipText("");
 
         heightVitalSignsRecording1.setText("Height:");
 
@@ -994,7 +995,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                                                     .addComponent(patientAgeVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(bloodGroupFieldVitalSignsRecording, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(heartRateFieldVitalSignsRecording, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(patientAgeFieldVitalSignsRecording, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                             .addGroup(VitalSignsPageLayout.createSequentialGroup()
                                                 .addComponent(temperatureVitalSignsRecording3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1057,7 +1058,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                     .addComponent(encounterID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(encounterIDVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bloodGroupIDVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bloodGroupFieldVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(heartRateFieldVitalSignsRecording, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(VitalSignsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(temperatureVitalSignsRecording3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1447,6 +1448,11 @@ public class hospitalManagement extends javax.swing.JFrame {
         jScrollPane11.setViewportView(HospitalAdminTable);
 
         deleteAll.setText("Delete user");
+        deleteAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteAllActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout HospitalAdminLayout = new javax.swing.GroupLayout(HospitalAdmin);
         HospitalAdmin.setLayout(HospitalAdminLayout);
@@ -1732,6 +1738,7 @@ public class hospitalManagement extends javax.swing.JFrame {
     
     public void registerationProcessSysAdmin(){
         if (comboBoxSysAdmin.getSelectedItem().toString().equals("Doctor")){
+            if(ValidationDoctorRegister().toString().equals("None")){
             DoctorPerson doc = docDir.addDcotorPerson();
             String name =  firstNameTextFieldSysAdmin.getText()+ " "+lastNameTextFieldSysAdmin.getText();
             doc.setName(name);
@@ -1750,8 +1757,12 @@ public class hospitalManagement extends javax.swing.JFrame {
             doc.setUserAddress(name);
             //PatientAppointmentDrList.addItem(doc.getUsername() +" " +"(" + doc.getPhone() + ", " + doc.getMail() + ")");
             sysAdminDocList();
+            }else{
+                JOptionPane.showMessageDialog(this, "The user already exists.");
+            }
             
         }else if(comboBoxSysAdmin.getSelectedItem().toString().equals("Patient")){
+            if(ValidationPatientRegister().toString().equals("None")){
             Patient person = dir.addPerson();
             String name =  firstNameTextFieldSysAdmin.getText()+ " "+lastNameTextFieldSysAdmin.getText();
             person.setName(name);
@@ -1766,6 +1777,7 @@ public class hospitalManagement extends javax.swing.JFrame {
             person.setUserAddress(userAddress.getText());
             person.setZipCode(Integer.parseInt(zipCode.getText()));
             sysAdminPatientList();
+            }
         }
         
     }
@@ -1779,7 +1791,9 @@ public class hospitalManagement extends javax.swing.JFrame {
     }
     
     public void registerationProcess(){
+        String doc1 = ValidationDoctorRegister();
     if (rolesComboBox.getSelectedItem().toString().equals("Doctor")){
+            if (doc1.toString().equals("None")){
             DoctorPerson doc = docDir.addDcotorPerson();
             String name =  firtsNameTextFieldRegister.getText()+ " "+lastNameTextFieldRegister.getText();
             doc.setName(name);
@@ -1797,8 +1811,12 @@ public class hospitalManagement extends javax.swing.JFrame {
             System.out.println(docDir.getDoctorDir().size());
             //PatientAppointmentDrList.addItem(doc.getUsername() +" " +"(" + doc.getPhone() + ", " + doc.getMail() + ")");
             sysAdminDocList();
+            }else{
+                JOptionPane.showMessageDialog(this, "The user already exists.");
+            }
             
         }else if(rolesComboBox.getSelectedItem().toString().equals("Patient")){
+            if(ValidationPatientRegister().equals("None") || ValidationPatientRegister().equals(null)){
             Patient person = dir.addPerson();
             String name =  firtsNameTextFieldRegister.getText()+ " "+lastNameTextFieldRegister.getText();
             person.setName(name);
@@ -1814,8 +1832,12 @@ public class hospitalManagement extends javax.swing.JFrame {
             person.setHospitalName(jComboBox1.getSelectedItem().toString());
             person.setZipCode(Integer.parseInt(zipCode.getText()));
             sysAdminPatientList();
+            }else{
+                JOptionPane.showMessageDialog(this, "The user already exists.");
+            }
             
         }else if(rolesComboBox.getSelectedItem().toString().equals("System Administration")){
+            if(ValidationSysAdminRegister().toString().equals("None")){
             SystemAdmin admin = sysAdminDir.addSystemAdmin();
             String name =  firtsNameTextFieldRegister.getText()+ " "+lastNameTextFieldRegister.getText();
             admin.setName(name);
@@ -1829,9 +1851,13 @@ public class hospitalManagement extends javax.swing.JFrame {
             admin.setUserAddress(userAddress.getText());
             admin.setZipCode(Integer.parseInt(zipCode.getText()));
             admin.setHospitalName(jComboBox1.getSelectedItem().toString());
-            admin.setAdminID(patIDGen());            
+            admin.setAdminID(patIDGen());    
+            }else{
+                JOptionPane.showMessageDialog(this, "The user already exists.");
+            }
         
         }else if(rolesComboBox.getSelectedItem().toString().equals("Hospital Administration")){
+            if(ValidationHospitalAdminRegister().toString().equals("None")){
             HospitalAdmin hospAdmins = hospAdminDIr.addHospitalAdmin();
             String name =  firtsNameTextFieldRegister.getText()+ " "+lastNameTextFieldRegister.getText();
             hospAdmins.setName(name);
@@ -1846,7 +1872,10 @@ public class hospitalManagement extends javax.swing.JFrame {
             hospAdmins.setZipCode(Integer.parseInt(zipCode.getText()));
             hospAdmins.setHospitalName(jComboBox1.getSelectedItem().toString());
             hospAdmins.setHospitalAdminID(hospAdminIDGen());
-            
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "The user already exists.");
+            }
         }
     }
     
@@ -1930,6 +1959,12 @@ public class hospitalManagement extends javax.swing.JFrame {
         if(doc.getHospitalName().toString().equals(hospName)){
        String dataDoc[] = {doc.getMdeicalLicenseNumber(), doc.getName(), doc.getDateOfBirth().toString(), doc.getMail(), String.valueOf(doc.getPhone()), doc.getAccountStatus(), doc.getRole()};
        hosAdminTable.addRow(dataDoc);
+        }
+    }
+    for (SystemAdmin adm: sysAdminDir.getAdminDirectory()){
+        if (adm.getHospitalName().toString().equals(hospName)){
+            String dataAdm[] = {adm.getAdminID(), adm.getName(), adm.getDateOfBirth().toString(), adm.getMail(), String.valueOf(adm.getPhone()), adm.getAccountStatus(), adm.getRole()};
+            hosAdminTable.addRow(dataAdm);
         }
     }
     }
@@ -2052,7 +2087,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 }
             }
             userName.setText(encToWorkWith.getUsername());
-            bloodGroupFieldVitalSignsRecording.setText("A+");
+           
             encounterID.setText(encToWorkWith.getEncounterID());
             
             //need to add age as well
@@ -2089,8 +2124,9 @@ public class hospitalManagement extends javax.swing.JFrame {
         System.out.println(encToWorkWith.getEncounterID());
         encToWorkWith.setBloodPressure(Integer.parseInt(bloodPressureFieldVitalSignsRecording.getText()));
         encToWorkWith.setHeight(Integer.parseInt(heightFieldVitalSignsRecording1.getText()));
-        encToWorkWith.setBloodPressure(Integer.parseInt(bloodPressureFieldVitalSignsRecording.getText()));
+        encToWorkWith.setBodyTemperatur(Integer.parseInt(temperatureFieldVitalSignsRecording4.getText()));
         encToWorkWith.setRespirationRate(Integer.parseInt(respirationRateFieldVitalSignsRecording.getText()));
+        encToWorkWith.setHeartRate(Integer.parseInt(heartRateFieldVitalSignsRecording.getText()));
         encToWorkWith.setDiagnosis(jTextArea3.getText());
     }//GEN-LAST:event_AddVitalSignsToEncounterActionPerformed
 
@@ -2236,6 +2272,47 @@ public class hospitalManagement extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         PanelPaint(Login);
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void deleteAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAllActionPerformed
+        int row = HospitalAdminTable.getSelectedRow();
+        HospitalAdmin admin = ValidationHospAdmin();
+        int index = 0;
+        if (row != -1){
+            String ID = HospitalAdminTable.getValueAt(row, 0).toString();
+            String role = HospitalAdminTable.getValueAt(row, 6).toString();
+            
+            if (role.equals("Patient")){
+               
+                for(Patient pat: dir.getDir()){
+                    if (pat.getUniqueID().toString().equals(ID)){
+                        index = dir.getDir().indexOf(pat);
+                        System.out.println(index);
+                    }
+                }
+            dir.getDir().remove(index);
+            doctorAppointmentsList(admin.getHospitalName());
+            }
+            if (role.equals("Doctor")){
+                for (DoctorPerson doc: docDir.getDoctorDir()){
+                    if (doc.getMdeicalLicenseNumber().toString().equals(ID)){
+                        index = docDir.getDoctorDir().indexOf(doc);
+                    }
+                }
+                docDir.getDoctorDir().remove(index);
+                doctorAppointmentsList(admin.getHospitalName());
+            }if (role.equals("System Administration")){
+                for(SystemAdmin adm:sysAdminDir.getAdminDirectory()){
+                    if (adm.getAdminID().toString().equals(ID)){
+                        index = sysAdminDir.getAdminDirectory().indexOf(adm);
+                    }
+                }
+                sysAdminDir.getAdminDirectory().remove(index);
+                doctorAppointmentsList(admin.getHospitalName());
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "No user selected for deletion.");
+        }
+    }//GEN-LAST:event_deleteAllActionPerformed
     
     public HospitalAdmin ValidationHospAdmin(){
     HospitalAdmin hoAdmin = new HospitalAdmin();
@@ -2274,6 +2351,61 @@ public class hospitalManagement extends javax.swing.JFrame {
             }
             
     }return doc;
+    }
+    public String ValidationDoctorRegister(){
+        DoctorPerson doc = new DoctorPerson();
+        String Doc = "None";
+        for (DoctorPerson dr: docDir.getDoctorDir()){
+            if (dr.getUsername().equals(usernameTextField1.getText())){
+                dr = doc;
+                Doc = doc.getUsername();
+            }else{
+                Doc = "None";
+            }   
+        }
+        return Doc;    
+    }
+    
+    public String ValidationPatientRegister(){
+        Patient doc = new Patient();
+        String Doc = "None";
+        for (Patient dr: dir.getDir()){
+            if (dr.getUsername().equals(usernameTextField1.getText())){
+                dr = doc;
+                Doc = doc.getUsername();
+            }else{
+                Doc = "None";
+            }   
+        }
+        return Doc;    
+    }
+    
+    public String ValidationSysAdminRegister(){
+        SystemAdmin doc = new SystemAdmin();
+        String Doc = "None";
+        for (SystemAdmin dr: sysAdminDir.getAdminDirectory()){
+            if (dr.getUsername().equals(usernameTextField1.getText())){
+                dr = doc;
+                Doc = doc.getUsername();
+            }else{
+                Doc = "None";
+            }   
+        }
+        return Doc;    
+    }
+    
+    public String ValidationHospitalAdminRegister(){
+        HospitalAdmin doc = new HospitalAdmin();
+        String Doc = "None";
+        for (HospitalAdmin dr: hospAdminDIr.getHosAdmin()){
+            if (dr.getUsername().equals(usernameTextField1.getText())){
+                dr = doc;
+                Doc = doc.getUsername();
+            }else{
+                Doc = "None";
+            }   
+        }
+        return Doc;    
     }
     
     public SystemAdmin ValidationSysAdmin() {
@@ -2379,7 +2511,6 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JPanel addHospital;
     private javax.swing.JButton addNewUser;
     private javax.swing.JLabel ailmentVitalSignsRecording2;
-    private javax.swing.JTextField bloodGroupFieldVitalSignsRecording;
     private javax.swing.JLabel bloodGroupIDVitalSignsRecording;
     private javax.swing.JTextField bloodPressureFieldVitalSignsRecording;
     private javax.swing.JLabel bloodPressureIDVitalSignsRecording;
@@ -2402,6 +2533,7 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JLabel genderSysAdmin;
     private javax.swing.JComboBox<String> grievencesComboBox;
     private javax.swing.JLabel grievencesSysAdmin;
+    private javax.swing.JTextField heartRateFieldVitalSignsRecording;
     private javax.swing.JTextField heightFieldVitalSignsRecording1;
     private javax.swing.JLabel heightVitalSignsRecording1;
     private javax.swing.JButton jButton1;
