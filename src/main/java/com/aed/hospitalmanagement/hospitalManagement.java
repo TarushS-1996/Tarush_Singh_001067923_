@@ -229,7 +229,6 @@ public class hospitalManagement extends javax.swing.JFrame {
         addNewUser = new javax.swing.JButton();
         accountEnablePat = new javax.swing.JButton();
         accountEnable = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         RegisterViaSysAdmin = new javax.swing.JPanel();
         userNameSysAdmin = new javax.swing.JLabel();
         passwordSysAdmin = new javax.swing.JLabel();
@@ -1186,8 +1185,6 @@ public class hospitalManagement extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setText("View Grievences");
-
         javax.swing.GroupLayout SystemAdminHomeLayout = new javax.swing.GroupLayout(SystemAdminHome);
         SystemAdminHome.setLayout(SystemAdminHomeLayout);
         SystemAdminHomeLayout.setHorizontalGroup(
@@ -1201,13 +1198,10 @@ public class hospitalManagement extends javax.swing.JFrame {
                                 .addComponent(accountEnable)
                                 .addGap(18, 18, 18)
                                 .addComponent(accountDisable))
-                            .addGroup(SystemAdminHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(SystemAdminHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(SystemAdminHomeLayout.createSequentialGroup()
-                                    .addComponent(jButton6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(addNewUser)))
+                                .addComponent(addNewUser, javax.swing.GroupLayout.Alignment.TRAILING))
                             .addGroup(SystemAdminHomeLayout.createSequentialGroup()
                                 .addComponent(accountEnablePat)
                                 .addGap(18, 18, 18)
@@ -1223,9 +1217,7 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(SystemAdminHomeTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(SystemAdminHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addNewUser)
-                    .addComponent(jButton6))
+                .addComponent(addNewUser)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -2776,7 +2768,6 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
