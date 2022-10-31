@@ -5,6 +5,8 @@
 package com.aed.hospitalmanagement;
 
 import com.aed.backend.CalcAge;
+import com.aed.backend.Community;
+import com.aed.backend.CommunityAdminDir;
 import com.aed.backend.PatientDirectory;
 import com.aed.backend.DoctorDirectory;
 import com.aed.backend.DoctorPerson;
@@ -41,6 +43,7 @@ public class hospitalManagement extends javax.swing.JFrame {
     Encounter encToWorkWith = new Encounter();
     HospitalDirectory hospDir = new HospitalDirectory();
     HospitalAdminDirectory hospAdminDIr = new HospitalAdminDirectory();
+    CommunityAdminDir commAdminDIR = new CommunityAdminDir();
     
     
 
@@ -105,8 +108,8 @@ public class hospitalManagement extends javax.swing.JFrame {
         passwordTextField = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
+        jButton10 = new javax.swing.JButton();
         Register = new javax.swing.JPanel();
         AppLogo1 = new javax.swing.JLabel();
         username1 = new javax.swing.JLabel();
@@ -140,6 +143,8 @@ public class hospitalManagement extends javax.swing.JFrame {
         userAddress = new javax.swing.JTextArea();
         zipCode = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
         Workspace = new javax.swing.JPanel();
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
@@ -286,6 +291,18 @@ public class hospitalManagement extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        AddCommunity = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jButton4 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -318,17 +335,17 @@ public class hospitalManagement extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("Issues? Contact System Admin");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
         jToggleButton1.setText("Add Hospital");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setText("Add community");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
             }
         });
 
@@ -337,35 +354,38 @@ public class hospitalManagement extends javax.swing.JFrame {
         LoginLayout.setHorizontalGroup(
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginLayout.createSequentialGroup()
-                .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(LoginLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, LoginLayout.createSequentialGroup()
                         .addGap(340, 340, 340)
-                        .addComponent(AppLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(LoginLayout.createSequentialGroup()
-                        .addGap(264, 264, 264)
-                        .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(LoginLayout.createSequentialGroup()
                                 .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(username)
                                     .addComponent(password))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(32, 32, 32)
                                 .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(passwordTextField)
+                                    .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, LoginLayout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2))
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(484, Short.MAX_VALUE))
+                            .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(LoginLayout.createSequentialGroup()
+                                    .addComponent(jButton1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton2))
+                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(LoginLayout.createSequentialGroup()
+                                    .addComponent(AppLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(82, 82, 82))))))
+                .addContainerGap(342, Short.MAX_VALUE))
         );
         LoginLayout.setVerticalGroup(
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addContainerGap(167, Short.MAX_VALUE)
                 .addComponent(AppLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(114, 114, 114)
                 .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(username)
                     .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -373,15 +393,15 @@ public class hospitalManagement extends javax.swing.JFrame {
                 .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(password)
                     .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(31, 31, 31)
                 .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addGap(18, 18, 18)
                 .addComponent(jToggleButton1)
-                .addContainerGap(254, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton10)
+                .addGap(14, 14, 14))
         );
 
         Parent.add(Login, "card2");
@@ -428,7 +448,7 @@ public class hospitalManagement extends javax.swing.JFrame {
         Register.add(role);
         role.setBounds(220, 220, 83, 24);
 
-        rolesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Patient", "Doctor", "System Administration", "Hospital Administration" }));
+        rolesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Patient", "Doctor", "System Administration", "Hospital Administration", "Community Administration" }));
         rolesComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rolesComboBoxActionPerformed(evt);
@@ -544,11 +564,19 @@ public class hospitalManagement extends javax.swing.JFrame {
         Register.add(jScrollPane4);
         jScrollPane4.setBounds(360, 420, 170, 96);
         Register.add(zipCode);
-        zipCode.setBounds(680, 420, 64, 24);
+        zipCode.setBounds(670, 360, 64, 24);
 
         jLabel14.setText("Zip code:");
         Register.add(jLabel14);
-        jLabel14.setBounds(570, 420, 70, 18);
+        jLabel14.setBounds(560, 360, 70, 18);
+
+        jLabel29.setText("Community:");
+        Register.add(jLabel29);
+        jLabel29.setBounds(560, 310, 80, 18);
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No community" }));
+        Register.add(jComboBox3);
+        jComboBox3.setBounds(670, 310, 170, 24);
 
         Parent.add(Register, "card3");
 
@@ -1678,6 +1706,88 @@ public class hospitalManagement extends javax.swing.JFrame {
 
         Parent.add(addHospital, "card6");
 
+        jLabel24.setText("Add new Community");
+
+        jLabel25.setText("Community Name:");
+
+        jLabel26.setText("Community Zip code:");
+
+        jLabel27.setText("Community Admin Name:");
+
+        jLabel28.setText("Admin Password:");
+
+        jButton4.setText("Add");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("Cancel");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AddCommunityLayout = new javax.swing.GroupLayout(AddCommunity);
+        AddCommunity.setLayout(AddCommunityLayout);
+        AddCommunityLayout.setHorizontalGroup(
+            AddCommunityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddCommunityLayout.createSequentialGroup()
+                .addGroup(AddCommunityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddCommunityLayout.createSequentialGroup()
+                        .addGap(374, 374, 374)
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AddCommunityLayout.createSequentialGroup()
+                        .addGap(279, 279, 279)
+                        .addGroup(AddCommunityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AddCommunityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel25)
+                                .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel28)
+                            .addComponent(jButton4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(AddCommunityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(AddCommunityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextField5)
+                                .addComponent(jTextField6)
+                                .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                                .addComponent(jPasswordField1))
+                            .addComponent(jButton9))))
+                .addContainerGap(318, Short.MAX_VALUE))
+        );
+        AddCommunityLayout.setVerticalGroup(
+            AddCommunityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddCommunityLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addGroup(AddCommunityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(AddCommunityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(AddCommunityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel27)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(AddCommunityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(AddCommunityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(jButton9))
+                .addContainerGap(261, Short.MAX_VALUE))
+        );
+
+        Parent.add(AddCommunity, "card7");
+
         getContentPane().add(Parent, "card2");
 
         pack();
@@ -1992,11 +2102,12 @@ public class hospitalManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_phoneTextFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Community co = ValidationCommunityAdmin();
         Patient data = ValidationPerson();
         DoctorPerson dataDoc = ValidationDoctor();
         SystemAdmin sysAdmin = ValidationSysAdmin();
         HospitalAdmin homie = ValidationHospAdmin();
-        if (data != null || dataDoc != null || sysAdmin != null || homie != null){
+        if (data != null || dataDoc != null || sysAdmin != null || homie != null || co != null){
             if (data.getRole() == "Patient"){
                 leftWelcome.setText("Welcome: "+ data.getUsername());
                 leftAccID.setText("Acc. ID: "+data.getUniqueID());
@@ -2023,6 +2134,10 @@ public class hospitalManagement extends javax.swing.JFrame {
                 PanelPaint(Workspace);
                 SplitPanelPaint(HospitalAdmin);
                 hospAdminPatientAndDocList(homie.getHospitalName());
+            }
+            else {
+                PanelPaint(Workspace);
+                SplitPanelPaint(Grievences);
             }
             
         }
@@ -2094,10 +2209,6 @@ public class hospitalManagement extends javax.swing.JFrame {
         }
     }
     
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        PanelPaint(Grievences);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         PanelPaint(Login);
         PatientAppointmentDrList.removeAllItems();
@@ -2398,6 +2509,24 @@ public class hospitalManagement extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No user selected for deletion.");
         }
     }//GEN-LAST:event_deleteAllActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        PanelPaint(AddCommunity);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        PanelPaint(Login);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        PanelPaint(Login);
+        Community com = commAdminDIR.addCommunity();
+        com.setCommunityName(jTextField5.getText());
+        com.setZommunityZipCode(Integer.parseInt(jTextField6.getText()));
+        com.setCommunityAdmin(jTextField7.getText());
+        com.setCommunityPassword(String.valueOf(jPasswordField1.getPassword()));
+        jComboBox3.addItem(jTextField5.getText());
+    }//GEN-LAST:event_jButton4ActionPerformed
     
     public HospitalAdmin ValidationHospAdmin(){
     HospitalAdmin hoAdmin = new HospitalAdmin();
@@ -2493,6 +2622,15 @@ public class hospitalManagement extends javax.swing.JFrame {
         return Doc;    
     }
     
+    public Community ValidationCommunityAdmin(){
+    Community com = new Community();
+    for (Community cm:commAdminDIR.getCommAdminDir()){
+        if (cm.getCommunityAdmin().equals(usernameTextField.getText()) && cm.getCommunityPassword().equals(String.valueOf(passwordTextField.getPassword()))){
+            com = cm;
+        }
+    }return com;
+    }
+    
     public SystemAdmin ValidationSysAdmin() {
         SystemAdmin sysAD = new SystemAdmin();
         for (SystemAdmin adm: sysAdminDir.getAdminDirectory()){
@@ -2542,6 +2680,7 @@ public class hospitalManagement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel AddCommunity;
     private javax.swing.JButton AddVitalSigns;
     private javax.swing.JButton AddVitalSignsToEncounter;
     private javax.swing.JLabel AppLogo;
@@ -2622,6 +2761,7 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JTextField heightFieldVitalSignsRecording1;
     private javax.swing.JLabel heightVitalSignsRecording1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -2629,8 +2769,10 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2648,6 +2790,12 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -2656,6 +2804,7 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
@@ -2683,6 +2832,9 @@ public class hospitalManagement extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField lastNameTextFieldRegister;
     private javax.swing.JTextField lastNameTextFieldSysAdmin;

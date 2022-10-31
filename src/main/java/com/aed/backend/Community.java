@@ -12,6 +12,24 @@ public class Community extends Hospital{
     private String communityName;
     private int zommunityZipCode;
     private String communityID;
+    private String communityAdmin;
+    private String communityPassword;
+
+    public String getCommunityPassword() {
+        return communityPassword;
+    }
+
+    public void setCommunityPassword(String communityPassword) {
+        this.communityPassword = communityPassword;
+    }
+
+    public String getCommunityAdmin() {
+        return communityAdmin;
+    }
+
+    public void setCommunityAdmin(String communityAdmin) {
+        this.communityAdmin = communityAdmin;
+    }
 
     public String getCommunityID() {
         return communityID;
