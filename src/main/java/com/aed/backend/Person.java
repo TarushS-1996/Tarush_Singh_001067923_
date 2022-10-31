@@ -4,6 +4,7 @@
  */
 package com.aed.backend;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -14,6 +15,15 @@ public class Person extends Community{
     private String name;
     private String userAddress;
     private int zipCode;
+    private ArrayList<String> errors = new ArrayList<>();
+
+    public ArrayList<String> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(ArrayList<String> errors) {
+        this.errors = errors;
+    }
 
     public String getUserAddress() {
         return userAddress;
@@ -28,7 +38,12 @@ public class Person extends Community{
     }
 
     public void setZipCode(int zipCode) {
+        String zip = String.valueOf(zipCode);
+        if (zip.length() == 5 ){
         this.zipCode = zipCode;
+        }else{
+            this.errors.add("Zip code seems to be incorrect. Please provide appropriate value.");
+        }
     }
 
     public String getName() {
@@ -101,7 +116,12 @@ public class Person extends Community{
     }
 
     public void setPhone(int phone) {
+        String phoneS = String.valueOf(phone);
+        if (phoneS.length()== 10){
         this.phone = phone;
+        }else{
+        this.errors.add("Sorry but the number seems to be of wrong length.");
+        }
     }
 
     public String getGender() {

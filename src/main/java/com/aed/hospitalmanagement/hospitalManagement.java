@@ -20,6 +20,7 @@ import com.aed.backend.SystemAdmin;
 import com.aed.backend.SystemAdminDirectory;
 import java.util.Date;
 import java.util.Random;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.LookAndFeel;
@@ -1796,8 +1797,9 @@ public class hospitalManagement extends javax.swing.JFrame {
     public void registerationProcess(){
         String doc1 = ValidationDoctorRegister();
     if (rolesComboBox.getSelectedItem().toString().equals("Doctor")){
-            if (doc1.toString().equals("None")){
-            DoctorPerson doc = docDir.addDcotorPerson();
+        DoctorPerson doc = docDir.addDcotorPerson();
+            if (doc.getErrors().size() == 0){
+            
             String name =  firtsNameTextFieldRegister.getText()+ " "+lastNameTextFieldRegister.getText();
             doc.setName(name);
             doc.setUsername(usernameTextField1.getText());
@@ -1815,7 +1817,9 @@ public class hospitalManagement extends javax.swing.JFrame {
             //PatientAppointmentDrList.addItem(doc.getUsername() +" " +"(" + doc.getPhone() + ", " + doc.getMail() + ")");
             sysAdminDocList();
             }else{
-                JOptionPane.showMessageDialog(this, "The user already exists.");
+                for(String err : doc.getErrors()){
+                    JOptionPane.showMessageDialog(this, err);
+                }
             }
             
         }else if(rolesComboBox.getSelectedItem().toString().equals("Patient")){
@@ -1890,8 +1894,8 @@ public class hospitalManagement extends javax.swing.JFrame {
             hosp.setHospitalAddress("99 Calumet STreet");
             hosp.setHospitalZipCode(Integer.parseInt("02120"));
             hosp.setHospitalNumber(Integer.parseInt("1234567890"));
-            jComboBox1.addItem(jTextField1.getText());
-            jComboBox2.addItem(jTextField1.getText());
+            jComboBox1.addItem("St Thomas");
+            jComboBox2.addItem("St Thomas");
             PanelPaint(Login);
             
             DoctorPerson doc = docDir.addDcotorPerson();
@@ -1902,6 +1906,7 @@ public class hospitalManagement extends javax.swing.JFrame {
             doc.setMail("tarush.singh29@gmail.com");
             doc.setRole("Doctor");
             doc.setDateOfBirth(jDateChooser1.getDate());
+            System.out.println(jDateChooser1.getDate().toString());
             doc.setPhone(1234567890);
             doc.setGender("Male");
             doc.setMdeicalLicenseNumber("MLN-157681");
