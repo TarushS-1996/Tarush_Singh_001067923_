@@ -1948,6 +1948,7 @@ public class hospitalManagement extends javax.swing.JFrame {
             person.setUserAddress(userAddress.getText());
             person.setHospitalName(jComboBox1.getSelectedItem().toString());
             person.setZipCode(Integer.parseInt(zipCode.getText()));
+            person.setCommunityName(jComboBox3.getSelectedItem().toString());
             sysAdminPatientList();
             }else{
                 JOptionPane.showMessageDialog(this, "The user already exists.");
@@ -2022,6 +2023,7 @@ public class hospitalManagement extends javax.swing.JFrame {
             doc.setMdeicalLicenseNumber("MLN-157681");
             doc.setUserAddress("RL-30 G-BLock");
             doc.setZipCode(42302);
+            doc.setCommunityName("Indian");
             doc.setHospitalName("St Thomas");
             //System.out.println(docDir.getDoctorDir().size());
             //PatientAppointmentDrList.addItem(doc.getUsername() +" " +"(" + doc.getPhone() + ", " + doc.getMail() + ")");
@@ -2039,6 +2041,7 @@ public class hospitalManagement extends javax.swing.JFrame {
             person.setGender("Female");
             person.setUniqueID(patIDGen());
             person.setUserAddress("Texas");
+            person.setCommunityName("Indian");
             person.setHospitalName("St Thomas");
             person.setZipCode(45123);
             sysAdminPatientList();
@@ -2072,6 +2075,13 @@ public class hospitalManagement extends javax.swing.JFrame {
             hospAdmins.setZipCode(01234);
             hospAdmins.setHospitalName("St Thomas");
             hospAdmins.setHospitalAdminID(hospAdminIDGen());
+            
+            Community com = commAdminDIR.addCommunity();
+            com.setCommunityAdmin("Shreya");
+            com.setCommunityName("Indian");
+            com.setCommunityPassword("1");
+            com.setZommunityZipCode(12345);
+            jComboBox3.addItem("Indian");
         }
     
     private void registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerActionPerformed
